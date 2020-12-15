@@ -39,7 +39,13 @@
     height: 100vh;
     width: 100%;
 
+    /* position props */
     position: relative;
+
+    /* background props */
+    background-position: top center;
+    background-size: contain;
+    background-repeat: no-repeat;
 
     /* component props */
     background: rgba(0, 0, 0, 0.63);
@@ -53,19 +59,14 @@ ul {
     /* display props [ grid ] */
     display: grid;
     gap: 10px;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: minmax(50px, auto);
     height: 100%;
     width: 100%;
-
-    /* component props */
-    
-    /* padding: var(--md); */
 }
-/* list element */
 ul li {
     /* grid placement [ ul ] */
-    grid-column: span 1;
+    grid-column: span 2;
     grid-row: span 1;
 
     /* display props [ flex ] */
@@ -84,92 +85,177 @@ ul li {
     list-style-type: none;
 
 }
-/* list element child */
-ul li:nth-child(1),
-ul li:nth-child(2) {
+/* remove large panel elements on mobile devices */
+ul li:nth-child(1) {
+    /* grid placement [ ul ] */
+    grid-column: span 1;
     grid-row: span 2;
+
+    /* display props [ none ] */
+    display: none;
 }
-ul li:nth-child(6),
-ul li:nth-child(8) {
-    grid-column: span 2;
+ul li:nth-child(2) {
+    /* grid placement [ ul ] */
+    grid-column: span 1;
+    grid-row: span 2;
+
+    /* display props [ none ] */
+    display: none;
+}
+/* remove last panel element on mobile devices */
+ul li:last-child {
+    /* display props [ none ] */
+    display: none;
+}
+
+/* theme [ orange ] */
+.orange {
+    border: 0.3rem solid var(--darkorange);
+}
+.orange i {
+    color: var(--darkorange);
+}
+.orange:hover {
+    background: var(--darkorange);
+}
+.orange:hover i {
+    color: #FFF;
+}
+/* theme [ red ] */
+.red {
+    border: 0.3rem solid var(--darkred);
+}
+.red i {
+    color: var(--darkred);
+}
+.red:hover i {
+    color: #FFF;
+}
+.red:hover {
+    background: var(--darkred);
+    transition: 100ms all ease-in-out;
+}
+/* theme [ purple ] */
+.purple {
+    border: 0.3rem solid var(--darkpurple);
+}
+.purple i {
+    color: var(--darkpurple);
+}
+.purple:hover {
+    background: var(--darkpurple);
+}
+.purple:hover i {
+    color: #FFF;
+}
+/* theme [ aqua ] */
+.aqua {
+    border: 0.3rem solid var(--darkaqua);
+}
+.aqua i {
+    color: var(--darkaqua);
+}
+.aqua:hover {
+    background: var(--darkaqua);
+}
+.aqua:hover i {
+    color: #FFF;
 }
 
 /* media query [ tablet & screen readers */
 @media screen and (min-width: 700px) {
-
+    .page ul {
+        
+        max-width: 899px;
+        
+    }
     ul {
-        /* display props [ grid ] */
-        grid-template-columns: repeat(6, 1fr);
-        grid-auto-rows: minmax(100px, auto);
-        height: 100vh;
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: minmax(0.85rem, auto);
+        height: 100%;
         width: 100%;
 
-        /* component props */
-        /* border: 2px solid var(--darkwhite); */
-        border-radius: 10px;
+        min-height: 45vh;
         padding: var(--sm);
     }
     ul li {
-        /* grid placement [ ul ] */
         grid-column: span 1;
         grid-row: span 1;
+    }
+
+    /* remove large panel elements on mobile devices */
+    ul li:nth-child(1) {
+        grid-column: span 1;
+        grid-row: span 2;
+
+        display: none;
+    }
+    ul li:nth-child(2) {
+        grid-column: span 1;
+        grid-row: span 2;
+
+        display: none;
+    }
+    /* remove last panel element on mobile devices */
+    ul li:last-child {
+        display: none;
+    }
+
+}
+/* media query [ laptop & small monitors ] */
+@media screen and (min-width: 900px) {
+    .page ul {
+        max-width: 1920px;
+        min-height: 55vh;
+    }
+    ul {
+        /* display props [ grid ] */
+        grid-template-columns: repeat(6, 1fr);
+        grid-auto-rows: minmax(0.85rem, auto);
+        height: 100%;
+        width: 100%;
+        
+
+        /* componenet props */
+        border-radius: 10px;
+        padding: var(--sm);
+    }
+    .page ul li {
+        /* grid placement [ ul ] */
+        grid-column: span 1;
+        grid-row: span 2;
 
         /* component props */
         transition: 200ms all ease-in;
     }
+
+    /* tall panel */
     ul li:nth-child(1),
     ul li:nth-child(2) {
+        /* grid placement [ ul ] */
+        grid-column: span 1;
+        grid-row: span 4;
+
+        /* display: props */
+        display: flex;
+        
         /* background props */
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
     }
 
-    /* first row */
     ul li:nth-child(1) {
-        /* grid placement [ ul ] */
-        grid-column: span 1;
-        grid-row: span 4;
-
         /* background image */
         background-image: url(img/launch.jpg);
         
     }
     ul li:nth-child(2) {
-        /* grid placement [ ul ] */
-        grid-column: span 1;
-        grid-row: span 4;
-        
         /* background image */
         background-image: url(img/travel.jpg);
     }
-    ul li:nth-child(3) {
-        /* grid placement [ ul ] */
-        grid-column: span 1;
-        grid-row: span 2;
-    }
-    ul li:nth-child(4) {
-        /* grid placement [ ul ] */
-        grid-column: span 1;
-        grid-row: span 2;
-    }
-    ul li:nth-child(5) {
-        /* grid placement [ ul ] */
-        grid-column: span 1;
-        grid-row: span 2;
-    }
-    ul li:nth-child(6) {
-        /* grid placement [ ul ] */
-        grid-column: span 1;
-        grid-row: span 2;
-    }
-
-    /* second row */
-    ul li:nth-child(7) {
-        /* grid placement [ ul ] */
-        grid-column: span 1;
-        grid-row: span 2;
-    }
+    
+    /* wide panel */
     ul li:nth-child(8) {
         /* grid placement [ ul ] */
         grid-column: span 2;
@@ -180,131 +266,20 @@ ul li:nth-child(8) {
         grid-column: span 1;
         grid-row: span 2;
     }
+    /* apply flex to last child element */
+    ul li:last-child {
+        display: flex;
+    }
 
-    /* third row */
-    ul li:nth-child(10) {
-        /* grid placement [ ul ] */
-        grid-column: span 1;
-        grid-row: span 2;
-    }
-    ul li:nth-child(11) {    
-        /* grid placement [ ul ] */
-        grid-column: span 1;
-        grid-row: span 2;
-    }
-    ul li:nth-child(12) {    
-        /* grid placement [ ul ] */
-        grid-column: span 1;
-        grid-row: span 2;
-    }
-    ul li:nth-child(13) {    
-        /* grid placement [ ul ] */
-        grid-column: span 1;
-        grid-row: span 2;
-    }
-    ul li:nth-child(14) {    
-        /* grid placement [ ul ] */
-        grid-column: span 1;
-        grid-row: span 2;
-    }
-    ul li:nth-child(15) {    
-        /* grid placement [ ul ] */
-        grid-column: span 1;
-        grid-row: span 2;
-    }
-    ul li:nth-child(16) {    
-        /* grid placement [ ul ] */
-        grid-column: span 3;
-        grid-row: span 2;
-    }
-    ul li:nth-child(17) {    
-        /* grid placement [ ul ] */
-        grid-column: span 3;
-        grid-row: span 2;
-    }
-    ul li:nth-child(18) {    
-        /* grid placement [ ul ] */
-        grid-column: span 3;
-        grid-row: span 2;
-    }
+    /* add point mouse styles to cursor */
     li:hover {
         cursor: pointer;
     }
+
+    /* panel icon props */
     li i {
         font-size: 1.85rem;
         padding: var(--md);
     }
     
-    /* panel color themes */
-    .orange {
-        /* element themes */
-        border: 2px solid var(--darkorange);
-    }
-    .orange h2 {
-        color: #FFF;
-        letter-spacing: 0.2rem;
-        text-decoration: underline;
-        text-transform: capitalize;
-        
-    }
-    .orange i {
-        color: var(--darkorange);
-    }
-    .orange:hover {
-        background: var(--darkorange);
-    }
-    .orange:hover h2 {
-        color: #FFF;
-    }
-    .orange:hover i {
-        color: #FFF;
-    }
-    
-    .red {
-        /* element themes */
-        border: 2px solid var(--darkred);
-    }
-    .red i {
-        color: var(--darkred);
-    }
-    .red:hover i {
-        color: #FFF;
-    }
-    .red:hover {
-        background: var(--darkred);
-        transition: 100ms all ease-in-out;
-    }
-    
-    .purple {
-        /* element themes */
-        border: 2px solid var(--darkpurple);
-    }
-    .purple i {
-        color: var(--darkpurple);
-    }
-    .purple:hover {
-        background: var(--darkpurple);
-        
-    }
-    .purple:hover i {
-        color: #FFF;
-    }
-    
-    .aqua {
-        /* element themes */
-        border: 2px solid var(--darkaqua);
-    }
-    .aqua i {
-        color: var(--darkaqua);
-    }
-    .aqua:hover {
-        background: var(--darkaqua);
-    }
-    .aqua:hover i {
-        color: #FFF;
-    }
-    
-    
-
-   
 }
