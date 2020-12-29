@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
 /* css reset */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
+
 /* global variables */
 :root {
 
@@ -19,8 +22,19 @@
     --darkred: rgba(177, 26, 58, 0.788);
     --darkwhite: rgba(224, 224, 224, 0.863);
 
+    /* fonts */
+    --font : 'Orbitron', sans-serif; /* futuristic font style */
+
     /* dev colors */
     --slateblue: rgb(10, 6, 39);
+    --gradient: rgb(134,49,244);
+    --gradient-background: linear-gradient(90deg, rgba(134,49,244,1) 1%, rgba(110,38,140,1) 55%, rgba(64,0,255,0.9635563698135504) 100%);
+
+    --gradient-alternate: rgb(134,49,244);
+    --gradient-background-alternate: linear-gradient(304deg, rgba(134,49,244,1) 1%, rgba(110,38,140,1) 55%, rgba(64,0,255,0.9635563698135504) 100%);
+
+    --gradient-transparent: rgb(99,93,101);
+    --gradient-background-transparent: linear-gradient(94deg, rgba(99,93,101,0.8491718931968167) 40%, rgba(30,119,160,0.7932712720788043) 91%);
 
     /* dev borders */
     --wireframe: 2px solid darkblue;
@@ -29,14 +43,16 @@
 
 
 }
+
 /* page wrapper */
 .page {
+    
     /* display props [ flex ] */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
 
     /* position props */
@@ -48,26 +64,44 @@
     background-repeat: no-repeat;
 
     /* component props */
-    background: rgba(0, 0, 0, 0.63);
-    background: var(--slateblue);
+    background: var(--gradient);
+    background: var(--gradient-background);
+
+    background: var(--gradient-alternate);
+    background: var(--gradient-background-alternate);
+
+    background: var(--gradient-transparent);
+    background: var(--gradient-background-transparent);
     
     padding: var(--lg);
 
+    font-family: var(--font);
+
 }
+
+
+
 /* list component */
 ul {
+    
     /* display props [ grid ] */
     display: grid;
     gap: 10px;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     grid-auto-rows: minmax(50px, auto);
     height: 100%;
     width: 100%;
+
+    /* component props */
+
+
+    /* dev */
 }
 ul li {
+
     /* grid placement [ ul ] */
-    grid-column: span 2;
-    grid-row: span 1;
+    grid-column: span 3;
+    grid-row: span 2;
 
     /* display props [ flex ] */
     display: flex;
@@ -83,84 +117,72 @@ ul li {
     border-radius: 10px;
     color: #FFF;
     list-style-type: none;
+    
+    /* dev */
+    border: 3px solid var(--darkwhite)
 
 }
-/* remove large panel elements on mobile devices */
-ul li:nth-child(1) {
-    /* grid placement [ ul ] */
-    grid-column: span 1;
-    grid-row: span 2;
+ul li i {
+    font-size: 2rem;
+}
 
-    /* display props [ none ] */
+/* display first and last element as wide panels */
+ul li:nth-child(1),
+ul li:nth-child(2),
+ul li:nth-child(3),
+ul li:nth-child(6) {
+    grid-column: span 6;
+}
+
+/* desktop applications element display [ none ]  */
+ul li:nth-child(1) p,
+ul li:nth-child(2) p,
+ul li:nth-child(3) p,
+ul li:nth-child(4) p,
+ul li:nth-child(5) p,
+ul li:nth-child(6) p  {
     display: none;
 }
-ul li:nth-child(2) {
-    /* grid placement [ ul ] */
-    grid-column: span 1;
-    grid-row: span 2;
 
-    /* display props [ none ] */
+/* desktop applications display props [ none ]  */
+ul li:nth-child(9),
+ul li:nth-child(10),
+ul li:nth-child(11),
+ul li:nth-child(12),
+ul li:nth-child(13) {
     display: none;
-}
-/* remove last panel element on mobile devices */
-ul li:last-child {
-    /* display props [ none ] */
-    display: none;
+} 
+
+/* theme [ gunmetal with darkaqua accents */
+.gunmetal {
+
+    /* component props [ color scheme ] */
+    background: rgb(48, 45, 45);
+    color: rgb(30, 119, 160);
 }
 
-/* theme [ orange ] */
-.orange {
-    border: 0.3rem solid var(--darkorange);
-}
-.orange i {
-    color: var(--darkorange);
-}
-.orange:hover {
-    background: var(--darkorange);
-}
-.orange:hover i {
+/* theme [ transparent glass with lightblue accents */
+.transparent {
+    /* display props [ flex ] */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* component props [ color scheme ] */
+    background: transparent;
+    border: none;
     color: #FFF;
+    text-align: center;
+    text-transform: capitalize;
+    letter-spacing: 0.12rem;
+
 }
-/* theme [ red ] */
-.red {
-    border: 0.3rem solid var(--darkred);
+.transparent h2 {
+    font-size: 1.75rem;
 }
-.red i {
-    color: var(--darkred);
-}
-.red:hover i {
-    color: #FFF;
-}
-.red:hover {
-    background: var(--darkred);
-    transition: 100ms all ease-in-out;
-}
-/* theme [ purple ] */
-.purple {
-    border: 0.3rem solid var(--darkpurple);
-}
-.purple i {
-    color: var(--darkpurple);
-}
-.purple:hover {
-    background: var(--darkpurple);
-}
-.purple:hover i {
-    color: #FFF;
-}
-/* theme [ aqua ] */
-.aqua {
-    border: 0.3rem solid var(--darkaqua);
-}
-.aqua i {
-    color: var(--darkaqua);
-}
-.aqua:hover {
-    background: var(--darkaqua);
-}
-.aqua:hover i {
-    color: #FFF;
-}
+
+
 
 /* media query [ tablet & screen readers */
 @media screen and (min-width: 700px) {
