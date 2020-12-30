@@ -1,8 +1,4 @@
 
-const page = document.querySelector('.page');
-
-let bk1 = 'img/launch.jpg';
-let bk2 = 'img/travel.jpg';
 
 // function [ displaytime ]
 displayTime = () => {
@@ -19,7 +15,7 @@ displayTime = () => {
     let session = 'AM';
 
     // if hours are equal to [ 0 ]
-    if (h = 0) {
+    if (h == 0) {
 
         // display hour as int 12
         h = 12;
@@ -52,11 +48,10 @@ displayTime = () => {
 displayTime();
 
 
-
-
 // function [ displaydate ]
 displaydate = () => {
 
+    // array [ days ]
     let days = [
         'sunday',
         'monday',
@@ -67,6 +62,7 @@ displaydate = () => {
         'saturday',
     ];
     
+    // array [ months ]
     let months = [
     
         'jan',
@@ -84,40 +80,132 @@ displaydate = () => {
     
     ];
 
-
+    // date method
     let d = new Date();
 
+    // date element selector
     let date = document.querySelector('.date');
 
+    // create date methods for relevant info
     let dt = d.getDate();
     let dy = days[d.getDay()];
     let mn = months[d.getMonth()];
     let yr = d.getFullYear();
 
+    // set date methods to named variables
+    let currentDay = dy;
+    let currentDate = dt + ' ' + mn + ' ' + yr;
 
-    
-    let currentDate = dt + ' ' + dy + ' ' + mn + ' ' + yr;
-
-    date.textContent = currentDate;
-
-    
-    // display the date to the user [ number 1 - 31 ]
-    // date.innerHTML = d.getDate();
-    // console.log(date.innerHTML);
-
-    // // display day of the week to user 
-    // day.innerHTML = days[d.getDay()];
-    // console.log(day.innerHTML);
-
-    // // display month of year to the user
-    // month.innerHTML = months[d.getMonth()];
-    // console.log(month.innerHTML);
-
-    // // display the current year to the user
-    // year.innerHTML = d.getFullYear();
-    // console.log(year.innerHTML);
+    // use current day and current date values for html date text content
+    date.textContent = currentDay + ' ' + currentDate;
 
 }
 
 // init [ displaydate ] function
 displaydate();
+
+
+
+const coffee = document.querySelector('#coffee');
+const google = document.querySelector('#google');
+const webapp = document.querySelector('#webapp');
+const webdev = document.querySelector('#webdev');
+
+
+let coffeelist = document.querySelector('#coffeelist');
+let googlelist = document.querySelector('#googlelist');
+let webapplist = document.querySelector('#webapplist');
+let webdevlist = document.querySelector('#webdevlist');
+
+defaultlistprops = () => {
+
+    coffeelist.style.display = 'none';
+    googlelist.style.display = 'none';
+    webapplist.style.display = 'none';
+    webdevlist.style.display = 'none';
+}
+
+defaultlistprops();
+
+coffee.addEventListener('click', ()=> {
+
+    // init [ defaultlistprops ] function
+    defaultlistprops();
+
+
+    coffeelist.style.display = 'flex';
+
+});
+google.addEventListener('click', ()=> {
+
+    // init [ defaultlistprops ] function
+    defaultlistprops();
+
+
+    googlelist.style.display = 'flex';
+
+});
+webapp.addEventListener('click', ()=> {
+
+    // init [ defaultlistprops ] function
+    defaultlistprops();
+
+
+    webapplist.style.display = 'flex';
+
+});
+webdev.addEventListener('click', ()=> {
+
+    // init [ defaultlistprops ] function
+    defaultlistprops();
+
+
+    webdevlist.style.display = 'flex';
+
+});
+
+
+
+
+// let tools = document.querySelectorAll('.footer .tools');
+// tools.addEventListener('click', ()=> {
+
+//     if (tools.className == ' active') {
+//         tools.toggleAttribute('class', ' active');
+//     }
+//     else {
+//         tools.toggleAttribute('class', ' active');
+//     }
+// });
+
+// tools.forEach(element => {
+//     element.addEventListener('click', ()=> {
+
+//         element.toggleAttribute('class', ' active');
+        
+//     });
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// background element selector
+const page = document.querySelector('.page');
+
+// background image sources
+let bk1 = 'img/launch.jpg';
+let bk2 = 'img/travel.jpg';

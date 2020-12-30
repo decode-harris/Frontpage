@@ -37,9 +37,9 @@
     --gradient-background-transparent: linear-gradient(94deg, rgba(99,93,101,0.8491718931968167) 40%, rgba(30,119,160,0.7932712720788043) 91%);
 
     /* dev borders */
-    --wireframe: 2px solid darkblue;
+    /* --wireframe: 2px solid darkblue;
     --debugging: 2px solid darkred;
-    --component: 2px solid darkgreen;
+    --component: 2px solid darkgreen; */
 
 
 }
@@ -50,7 +50,7 @@
     /* display props [ flex ] */
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     min-height: 100vh;
     width: 100%;
@@ -62,46 +62,85 @@
     background-position: top center;
     background-size: contain;
     background-repeat: no-repeat;
+    background: #000;
 
-    /* component props */
-    background: var(--gradient);
+    /* background: var(--gradient);
     background: var(--gradient-background);
 
     background: var(--gradient-alternate);
     background: var(--gradient-background-alternate);
 
     background: var(--gradient-transparent);
-    background: var(--gradient-background-transparent);
+    background: var(--gradient-background-transparent); */
     
-    padding: var(--lg);
-
+    /* component props */
     font-family: var(--font);
+    padding: var(--md);
+
+    /* dev */
+    
 
 }
 
-
-
-/* list component */
-ul {
-    
-    /* display props [ grid ] */
-    display: grid;
-    gap: 10px;
-    grid-template-columns: repeat(6, 1fr);
-    grid-auto-rows: minmax(50px, auto);
+/* header */
+.header {
+    color: rgb(30, 119, 160);
+    color: var(--darkwhite);
+    padding: var(--sm);
+    width: 100%;
+    margin-top: var(--md);
+    margin-bottom: var(--md);
+}
+.header .elmnts {
+    /* display props [ flex ] */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: 100%;
     width: 100%;
 
-    /* component props */
-
+    padding: var(--sm);
 
     /* dev */
+    border: var(--debugging);
 }
-ul li {
+.time {
+    color: rgb(30, 119, 160);
+    color: var(--darkwhite);
+    padding-top: var(--md);
+    font-size: 2rem;
+}
+.date {
+    color: rgb(30, 119, 160);
+    color: var(--darkwhite);
+    text-decoration: underline;
+}
+
+/* list component */
+.start {
+    
+    /* display props [ grid ] */
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(75px, auto);
+    height: 100%;
+    width: 100%;
+    
+
+    /* component props */
+    padding: var(--md);
+
+    /* dev */
+    border: var(--component);
+    
+}
+.start li {
 
     /* grid placement [ ul ] */
-    grid-column: span 3;
-    grid-row: span 2;
+    grid-column: span 1;
+    grid-row: span 1;
 
     /* display props [ flex ] */
     display: flex;
@@ -122,43 +161,135 @@ ul li {
     border: 3px solid var(--darkwhite)
 
 }
-ul li i {
-    font-size: 2rem;
+.start li i {
+    color: #FFF;
+    font-size: 1.85rem;
+}
+.start li a {
+
+    /* display props [ flex ] */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: var(--sm);
+    color: #FFF;
+    background: transparent;
+    text-decoration: none;
+
+    /* dev */
+    border: var(--debugging);
+}
+.start li button {
+    background: transparent;
+    border: none;
 }
 
-/* display first and last element as wide panels */
-ul li:nth-child(1),
-ul li:nth-child(2),
-ul li:nth-child(3),
-ul li:nth-child(6) {
-    grid-column: span 6;
+/* [ prototype ] list ( hidden by default ) */
+.prototype {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    padding: var(--sm);
+
+    transition: all ease-in 220ms;
+
+    /* dev */
+    border: var(--debugging);
+}
+.prototype li {
+    width: 250px;
+    height: 60px;
+
+    color: #FFF;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: none;
+
+    transition: all ease-in 220ms;
+
+    /* dev */
+    border: var(--component);
+}
+.prototype a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    color: #FFF;
+    text-decoration: none;
+
+    height: 100%;
+    width: 100%;
+}
+.prototype i {
+    font-size: 1.45rem;
+    padding-left: var(--md);
+}
+.prototype span {
+    padding-left: var(--md);
+    text-transform: capitalize;
+    letter-spacing: 0.13rem;
 }
 
-/* desktop applications element display [ none ]  */
-ul li:nth-child(1) p,
-ul li:nth-child(2) p,
-ul li:nth-child(3) p,
-ul li:nth-child(4) p,
-ul li:nth-child(5) p,
-ul li:nth-child(6) p  {
-    display: none;
+
+
+
+
+/* footer */
+.footer {
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 10vh;
+    width: 100%;
+    background: var(--darkwhite);
+
+    display: flex;
+    justify-content: space-evenly;
+
+    /* padding: var(--sm) var(--md); */
+
+    
+}
+.footer button {
+
+    background: transparent;
+    border: none;
+    height: 100%;
+    width: 100%;
+    
+}
+.footer button.active {
+    
+    background: rgb(30, 119, 160);
+}
+.footer i {
+    
+    
+    font-size: 1.5rem;
 }
 
-/* desktop applications display props [ none ]  */
-ul li:nth-child(9),
-ul li:nth-child(10),
-ul li:nth-child(11),
-ul li:nth-child(12),
-ul li:nth-child(13) {
-    display: none;
-} 
+.banking, .albums, .bookmarks {display:none;}
+
+
+
+
 
 /* theme [ gunmetal with darkaqua accents */
 .gunmetal {
 
     /* component props [ color scheme ] */
-    background: rgb(48, 45, 45);
-    color: rgb(30, 119, 160);
+    /* background: rgb(48, 45, 45); */
+    background: var(--darkwhite);
+    /* color: rgb(30, 119, 160); */
+    color: #000;
 }
 
 /* theme [ transparent glass with lightblue accents */
@@ -181,6 +312,7 @@ ul li:nth-child(13) {
 .transparent h2 {
     font-size: 1.75rem;
 }
+
 
 
 
@@ -242,66 +374,6 @@ ul li:nth-child(13) {
         border-radius: 10px;
         padding: var(--sm);
     }
-    .page ul li {
-        /* grid placement [ ul ] */
-        grid-column: span 1;
-        grid-row: span 2;
-
-        /* component props */
-        transition: 200ms all ease-in;
-    }
-
-    /* tall panel */
-    ul li:nth-child(1),
-    ul li:nth-child(2) {
-        /* grid placement [ ul ] */
-        grid-column: span 1;
-        grid-row: span 4;
-
-        /* display: props */
-        display: flex;
-        
-        /* background props */
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-
-    ul li:nth-child(1) {
-        /* background image */
-        background-image: url(img/launch.jpg);
-        
-    }
-    ul li:nth-child(2) {
-        /* background image */
-        background-image: url(img/travel.jpg);
-    }
     
-    /* wide panel */
-    ul li:nth-child(8) {
-        /* grid placement [ ul ] */
-        grid-column: span 2;
-        grid-row: span 2;
-    }
-    ul li:nth-child(9) {    
-        /* grid placement [ ul ] */
-        grid-column: span 1;
-        grid-row: span 2;
-    }
-    /* apply flex to last child element */
-    ul li:last-child {
-        display: flex;
-    }
-
-    /* add point mouse styles to cursor */
-    li:hover {
-        cursor: pointer;
-    }
-
-    /* panel icon props */
-    li i {
-        font-size: 1.85rem;
-        padding: var(--md);
-    }
     
 }
