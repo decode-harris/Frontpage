@@ -21,7 +21,7 @@ displayTime = () => {
         h = 12;
 
         // test
-        console.log(h);
+        // console.log(h);
     }
 
     if (h > 12) {
@@ -86,6 +86,7 @@ displaydate = () => {
     // date element selector
     let date = document.querySelector('.date');
 
+    console.log(d);
     // create date methods for relevant info
     let dt = d.getDate();
     let dy = days[d.getDay()];
@@ -98,6 +99,8 @@ displaydate = () => {
 
     // use current day and current date values for html date text content
     date.textContent = currentDay + ' ' + currentDate;
+
+    
 
 }
 
@@ -163,6 +166,132 @@ webdev.addEventListener('click', ()=> {
     webdevlist.style.display = 'flex';
 
 });
+
+
+buttondefault = () => {
+
+    bank.setAttribute('class', 'tools');
+    photo.setAttribute('class', 'tools');
+    book.setAttribute('class', 'tools');
+    menu.setAttribute('class', 'tools');
+}
+
+
+// function [ settings ]
+settings = () => {
+
+    // footer button selectors
+    const bank = document.querySelector('#bank');
+    const photo = document.querySelector('#photo');
+    const book = document.querySelector('#book');
+    const menu  = document.querySelector('#menu');
+    
+    bank.addEventListener('click', ()=> {
+
+        // init [ buttondefault ]
+        buttondefault();
+
+        // assign bank element class to [ active ]
+        bank.setAttribute('class', ' active');
+
+        // test
+        console.log('active [ bank ] button');
+
+    });
+    photo.addEventListener('click', ()=> {
+
+
+
+        // init [ buttondefault ]
+        buttondefault();
+
+        // assign  element class to [ active ]
+        photo.setAttribute('class', ' active');
+
+
+
+        // test
+        console.log('active [ photo ] button');
+
+    });
+    book.addEventListener('click', ()=> {
+
+        // init [ buttondefault ]
+        buttondefault();
+
+        // assign  element class to [ active ]
+        book.setAttribute('class', ' active');
+
+        // test
+        console.log('active [ book ] button');
+
+    });
+    menu.addEventListener('click', ()=> {
+
+        // init [ buttondefault ]
+        buttondefault();
+
+        // assign  element class to [ active ]
+        menu.setAttribute('class', ' active');
+
+        // test
+        console.log('active [ menu ] button');
+
+    });
+
+}
+
+// init [ settings ] function
+settings();
+
+
+
+listdefault = () => {
+
+    let start = document.querySelector('#start');
+    let album = document.querySelector('#album');
+    let bank = document.querySelector('#banking');
+    let  = document.querySelector('#banking');
+
+
+    // default props
+    start.style.display = 'none';
+    albums.style.display = 'none';
+
+
+
+    // dev
+    console.log('list view complete');
+
+}
+
+listproperties = () => {
+
+    // ul : start selector
+    const start = document.querySelector('#start');
+
+    const albums = document.querySelector('#albums');
+
+    albums.style.display = 'none';
+
+
+    listdefault();
+
+}
+
+listproperties();
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

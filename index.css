@@ -115,6 +115,11 @@
     color: rgb(30, 119, 160);
     color: var(--darkwhite);
     text-decoration: underline;
+    font-size: 1.24rem;
+    padding: var(--sm);
+
+    /* dev */
+    border: var(--debugging);
 }
 
 /* list component */
@@ -236,9 +241,25 @@
     text-transform: capitalize;
     letter-spacing: 0.13rem;
 }
+.prototype h3 {
+    text-transform: uppercase;
+    letter-spacing: 0.24rem;
+    padding-left: var(--sm);
+}
 
 
+.albums {
+    
+    border: 2px solid darkred;
+    color: #FFF;
+}
+.albums li {    
 
+    padding: var(--sm);
+
+    /* dev */
+    border: 2px solid var(--darkwhite);
+}
 
 
 /* footer */
@@ -276,7 +297,7 @@
     font-size: 1.5rem;
 }
 
-.banking, .albums, .bookmarks {display:none;}
+.banking, .bookmarks {display:none;}
 
 
 
