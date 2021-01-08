@@ -16,11 +16,18 @@
     --lg: 20%;
 
     /* colors */
-    --darkorange: rgba(173, 102, 20, 0.904);
-    --darkpurple: rgba(43, 16, 161, 0.815);
-    --darkaqua: rgba(20, 184, 175, 0.897);
-    --darkred: rgba(177, 26, 58, 0.788);
-    --darkwhite: rgba(224, 224, 224, 0.863);
+    --color:  rgb(13, 115, 122);
+    --color-tr:  rgba(13, 115, 122, 0.75);
+    --main: rgb(20, 12, 34);
+    --main-tr: rgba(20, 12, 34, 0.952);
+
+    
+    --done:rgb(13, 115, 122);
+    --need: rgb(133, 67, 14);
+    --grey: rgb(107, 106, 104);
+
+
+    --graphs: 150px;
 
     /* fonts */
     --font : 'Orbitron', sans-serif; /* futuristic font style */
@@ -46,69 +53,436 @@
 
 /* container component */
 .container {
+    
+    min-height: 100vh;
+
+    /* component props */
+    background: var(--main);
+    color: var(--color);
     font-family: var(--font);
 
     /* dev */
     border: var(--wireframe);
+}
+/* footer */
+.nav {
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 10vh;
+    width: 100%;
+    background: rgb(47, 73, 95);
+
+    display: flex;
+    justify-content: space-evenly;
+
+    /* padding: var(--sm) var(--md); */
+
+    
+}
+.nav button {
+
+    background: transparent;
+    border: none;
+    height: 100%;
+    width: 100%;
+    
+}
+.nav button.active {
+    
+    background: rgb(30, 119, 160);
+}
+.nav i {
+    
+    
+    font-size: 1.5rem;
+}
+
+/* header component */
+header {
+    /* display props [ flex ] */
+    display: flex;
+
+    /* component props */
+    padding: var(--md);
+    
+    /* dev */
+    border: var(--component);
+}
+header h2,
+header h5 {
+    margin: auto;
+}
+header h2 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+}
+header h5 {
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    letter-spacing: 0.1rem;
 }
 
 /* dashboard component */
 .dashboard {    
     /* display prosp [ flex ] */
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-
+    
     /* dev */
     border: var(--component);
 }
-.rent {
+
+/* dashboard [ overview ] */
+.overview {
+    width: 100%;
+}
+
+/* dashboard ul */
+.dash {
     
     /* display props [ grid ] */
     display: grid;
-    gap: 12px;
+    gap: 1rem;
     grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: minmax(100px, auto);
+    grid-auto-rows: minmax(50px, auto);
+    width: 100%;
 
     /* component props */
-    padding: var(--sm);
+    padding: var(--md);
+    margin-bottom: var(--lg);
+
 
     /* dev */
 }
-/* dashboard panel */
-.panel {
 
+/* dashboard item */
+.item {
     /* grid placement [ dashboard ] */
     grid-column: span 2;
-    grid-row: span 1;
+    grid-row: span 2;
 
     /* display prosp [ flex ] */
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
 
     /* component props  */
     border: none;
     border-radius: 10px;
-    color: slategray;
+    color:  rgb(13, 115, 122);
     text-transform: capitalize;
-    letter-spacing: 0.24rem;
-    line-height: 1.6;
-    font-size: 1.24rem;
-    -webkit-box-shadow: -1px -1px 10px 0px rgba(50, 50, 50, 0.75);
-    -moz-box-shadow:    -1px -1px 10px 0px rgba(50, 50, 50, 0.75);
-    box-shadow:         -1px -1px 10px 0px rgba(50, 50, 50, 0.75);
+    padding: var(--sm);
+    -webkit-box-shadow: -1px -1px 10px 0px rgba(13, 115, 122, 0.75);
+    -moz-box-shadow:    -1px -1px 10px 0px  rgba(13, 115, 122, 0.75);
+    box-shadow:         -1px -1px 10px 0px  rgba(13, 115, 122, 0.75);
+}
 
+/* dashboard panel */
+.panel {
+    /* grid placement [ dashboard ] */
+    grid-column: span 4;
+    grid-row: span 3;
+
+    /* display prosp [ flex ] */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    /* component props  */
+    border: none;
+    border-radius: 10px;
+    color:  rgb(13, 115, 122);
+    text-transform: capitalize;
+    padding: var(--sm);
+    -webkit-box-shadow: -1px -1px 10px 0px rgba(13, 115, 122, 0.75);
+    -moz-box-shadow:    -1px -1px 10px 0px  rgba(13, 115, 122, 0.75);
+    box-shadow:         -1px -1px 10px 0px  rgba(13, 115, 122, 0.75);
+    
+    /* dev */
+    /* border: var(--debugging); */
+}
+.sml-caps {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+.sml-low {
+    font-size: 0.9rem;
+}
+.lrg-num {
+    font-size: 1.6rem;
+    letter-spacing: 0.16rem;
+}
+
+/* [ circular graph [ circle ] : transform to animated futuristic component  */
+.circle {
+
+    /* placeholder props */
+    position: relative;
+
+    min-width: 120px;
+    min-height: 120px;
+
+    letter-spacing: 0.2rem;
+    line-height: 1.6;
+
+    border: 5px solid var(--grey);
+    border-radius: 50%;
+    color: var(--grey);
+
+    
+}
+.prog {
+
+    /* placeholder props */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    border: 10px solid var(--done);
+    border-radius: 50%;
+    color: var(--done);
+}
+
+/* chart graph [ bars ]  */
+.chart {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+    width: 100%;
+    padding: var(--md);
+    position: relative;
+
+
+    /* dev */
+    /* border: var(--wireframe); */
+    
+}
+.objectives {
+    position: relative;
+    height: 100%;
+    width: 20%;
+    max-height: 110px;
+
+    
+    /* dev */
+    background: var(--grey);
+    background: rgb(5, 5, 12);
+    background: none;
+    /* border: var(--debugging); */
+}
+.bars {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--done);
+}
+.bar1 {
+    height: 90%;
+}
+.bar2 {
+    height: 33%;
+}
+.bar3 {
+    height: 81%;
+}
+.bar4 {
+    height: 35%;
+}
+
+.obj {
+    
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 100%;
+    text-align: center;
+    
     /* dev */
     /* border: var(--debugging); */
 }
 
 
+/* graph container */
+.graph {
 
+    /* component props */
+    height: var(--graphs);
+    width: 100%;
+    padding: var(--md);
+
+    /* dev */
+    border: var(--debugging);
+
+    position: relative;
+    
+}
+/* linechart ul component */
+.linechart {
+    /* component props */
+    background: var(--main-tr);
+    list-style-type: none;
+    height: 100%;
+    width: 100%;
+
+    /* position: relative; */
+    
+    /* dev */
+    border: var(--debugging);
+}
+/* data-point element */
+.data-point {
+    /* position props */
+    position: absolute;
+
+    /* component props */
+    background: var(--done);
+    border: 2px solid var(--grey);
+    border-radius: 50%;
+    height: 12px;
+    width: 12px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.impact {
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+
+    /* dev */
+    border: var(--debugging);
+}
+.impact button {
+    background: transparent;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+}
+.user-off {
+    border: 4px solid var(--need);
+}
+.user-on {
+    border: 4px solid var(--done);
+    color: var(--done);
+    background: transparent;
+}
+.need {
+    border: 4px solid var(--need);
+    color: var(--need);
+}
+.done {
+    border: 4px solid var(--done);
+    color: var(--done);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* article component */
+article {
+
+    width: 100%;
+    /* dev */
+    border: var(--wireframe);
+}
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    padding: var(--md);
+
+    border: var(--debugging);
+}
+.box {
+    height: 16px;
+    width: 16px;
+    border: 1px solid  rgba(13, 115, 122, 0.75);
+    border-radius: 50%;
+}
 
 /* li [ total ] */
 /* li [ calculate ] */
 /* li [ payment ] */
 /* li [ date ] */
 
+@media (min-width: 760px) {
+    .item {
+        grid-column: span 1;
+    }
+    .panel {
+        grid-column: span 2;
+    }
+    .panel:nth-child(3) {
+        grid-column: span 4;
+    }
+}

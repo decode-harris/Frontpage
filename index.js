@@ -45,7 +45,7 @@ displayTime = () => {
 }
 
 // init [ displaytime ] function
-displayTime();
+// displayTime();
 
 
 // function [ displaydate ]
@@ -105,75 +105,76 @@ displaydate = () => {
 }
 
 // init [ displaydate ] function
-displaydate();
+// displaydate();
 
 
 
-const coffee = document.querySelector('#coffee');
-const google = document.querySelector('#google');
-const webapp = document.querySelector('#webapp');
-const webdev = document.querySelector('#webdev');
+// const coffee = document.querySelector('#coffee');
+// const google = document.querySelector('#google');
+// const webapp = document.querySelector('#webapp');
+// const webdev = document.querySelector('#webdev');
 
 
-let coffeelist = document.querySelector('#coffeelist');
-let googlelist = document.querySelector('#googlelist');
-let webapplist = document.querySelector('#webapplist');
-let webdevlist = document.querySelector('#webdevlist');
+// let coffeelist = document.querySelector('#coffeelist');
+// let googlelist = document.querySelector('#googlelist');
+// let webapplist = document.querySelector('#webapplist');
+// let webdevlist = document.querySelector('#webdevlist');
 
-defaultlistprops = () => {
+// defaultlistprops = () => {
 
-    coffeelist.style.display = 'none';
-    googlelist.style.display = 'none';
-    webapplist.style.display = 'none';
-    webdevlist.style.display = 'none';
-}
+//     coffeelist.style.display = 'none';
+//     googlelist.style.display = 'none';
+//     webapplist.style.display = 'none';
+//     webdevlist.style.display = 'none';
+// }
 
-defaultlistprops();
+// // defaultlistprops();
 
-coffee.addEventListener('click', ()=> {
+// coffee.addEventListener('click', ()=> {
 
-    // init [ defaultlistprops ] function
-    defaultlistprops();
-
-
-    coffeelist.style.display = 'flex';
-
-});
-google.addEventListener('click', ()=> {
-
-    // init [ defaultlistprops ] function
-    defaultlistprops();
+//     // init [ defaultlistprops ] function
+//     defaultlistprops();
 
 
-    googlelist.style.display = 'flex';
+//     coffeelist.style.display = 'flex';
 
-});
-webapp.addEventListener('click', ()=> {
+// });
+// google.addEventListener('click', ()=> {
 
-    // init [ defaultlistprops ] function
-    defaultlistprops();
-
-
-    webapplist.style.display = 'flex';
-
-});
-webdev.addEventListener('click', ()=> {
-
-    // init [ defaultlistprops ] function
-    defaultlistprops();
+//     // init [ defaultlistprops ] function
+//     defaultlistprops();
 
 
-    webdevlist.style.display = 'flex';
+//     googlelist.style.display = 'flex';
 
-});
+// });
+// webapp.addEventListener('click', ()=> {
+
+//     // init [ defaultlistprops ] function
+//     defaultlistprops();
+
+
+//     webapplist.style.display = 'flex';
+
+// });
+// webdev.addEventListener('click', ()=> {
+
+//     // init [ defaultlistprops ] function
+//     defaultlistprops();
+
+
+//     webdevlist.style.display = 'flex';
+
+// });
 
 
 buttondefault = () => {
 
+    coff.setAttribute('class', 'tools');
     bank.setAttribute('class', 'tools');
-    photo.setAttribute('class', 'tools');
-    book.setAttribute('class', 'tools');
-    menu.setAttribute('class', 'tools');
+    pics.setAttribute('class', 'tools');
+    note.setAttribute('class', 'tools');
+    
 }
 
 
@@ -181,11 +182,23 @@ buttondefault = () => {
 settings = () => {
 
     // footer button selectors
+    const coff  = document.querySelector('#coff');
     const bank = document.querySelector('#bank');
-    const photo = document.querySelector('#photo');
-    const book = document.querySelector('#book');
-    const menu  = document.querySelector('#menu');
-    
+    const pics= document.querySelector('#pics');
+    const note = document.querySelector('#note');
+
+    coff.addEventListener('click', ()=> {
+
+        // init [ buttondefault ]
+        buttondefault();
+
+        // assign  element class to [ active ]
+        coff.setAttribute('class', ' active');
+
+        // test
+        console.log('active [ coff ] button');
+
+    });
     bank.addEventListener('click', ()=> {
 
         // init [ buttondefault ]
@@ -198,7 +211,7 @@ settings = () => {
         console.log('active [ bank ] button');
 
     });
-    photo.addEventListener('click', ()=> {
+    pics.addEventListener('click', ()=> {
 
 
 
@@ -206,36 +219,24 @@ settings = () => {
         buttondefault();
 
         // assign  element class to [ active ]
-        photo.setAttribute('class', ' active');
+        pics.setAttribute('class', ' active');
 
 
 
         // test
-        console.log('active [ photo ] button');
+        console.log('active [ pics ] button');
 
     });
-    book.addEventListener('click', ()=> {
+    note.addEventListener('click', ()=> {
 
         // init [ buttondefault ]
         buttondefault();
 
         // assign  element class to [ active ]
-        book.setAttribute('class', ' active');
+        note.setAttribute('class', ' active');
 
         // test
-        console.log('active [ book ] button');
-
-    });
-    menu.addEventListener('click', ()=> {
-
-        // init [ buttondefault ]
-        buttondefault();
-
-        // assign  element class to [ active ]
-        menu.setAttribute('class', ' active');
-
-        // test
-        console.log('active [ menu ] button');
+        console.log('active [ note ] button');
 
     });
 
@@ -246,40 +247,40 @@ settings();
 
 
 
-listdefault = () => {
+// listdefault = () => {
 
-    let start = document.querySelector('#start');
-    let album = document.querySelector('#album');
-    let bank = document.querySelector('#banking');
-    let  = document.querySelector('#banking');
-
-
-    // default props
-    start.style.display = 'none';
-    albums.style.display = 'none';
+//     let start = document.querySelector('#start');
+//     let album = document.querySelector('#album');
+//     let bank = document.querySelector('#banking');
+//     // let set = document.querySelector('#banking');
 
 
-
-    // dev
-    console.log('list view complete');
-
-}
-
-listproperties = () => {
-
-    // ul : start selector
-    const start = document.querySelector('#start');
-
-    const albums = document.querySelector('#albums');
-
-    albums.style.display = 'none';
+//     // default props
+//     start.style.display = 'none';
+//     albums.style.display = 'none';
 
 
-    listdefault();
 
-}
+//     // dev
+//     console.log('list view complete');
 
-listproperties();
+// }
+
+// listproperties = () => {
+
+//     // ul : start selector
+//     const start = document.querySelector('#start');
+
+//     const albums = document.querySelector('#albums');
+
+//     albums.style.display = 'none';
+
+
+//     listdefault();
+
+// }
+
+// listproperties();
 
 
 
