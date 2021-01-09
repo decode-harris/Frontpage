@@ -326,7 +326,7 @@ header h5 {
     height: var(--graphs);
     width: 100%;
     padding: var(--md);
-
+    margin: 1rem;
     /* dev */
     border: var(--debugging);
 
@@ -339,9 +339,11 @@ header h5 {
     background: var(--main-tr);
     list-style-type: none;
     height: 100%;
+    max-height: 114px;
+    max-width: 281.433px;
     width: 100%;
 
-    /* position: relative; */
+    position: relative;
     
     /* dev */
     border: var(--debugging);
@@ -351,15 +353,43 @@ header h5 {
     /* position props */
     position: absolute;
 
+    /* set data-points as custom variable values */
+    left: calc(var(--x) - 9.5px);
+    bottom: calc(var(--y) - 6.5px); 
+
+    /* left: var(--x);
+    bottom: var(--y); */
+
     /* component props */
     background: var(--done);
     border: 2px solid var(--grey);
     border-radius: 50%;
     height: 12px;
     width: 12px;
+
+    
 }
+.data-lines {
+    
+    /* position props [ absolute ] */
+    position: absolute;
+    
+    /* assign [ x , y ] variables via js */
+    left: var(--x);
+    bottom: var(--y);
+    height: 3px;
 
+    /* calc [ hypotenuse ] via js  */
+    width: calc(var(--hyp) * 1px);
 
+    /* calc [ angle ] via js */
+    transform: rotate(calc(var(--angle) * 1deg));
+    transform-origin: left bottom;
+
+    /* dev */
+    background: var(--done);
+    
+}
 
 
 

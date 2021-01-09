@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+/* css reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* global variables */
+:root {
+
+    /* spacing */
+    --sm: 2%;
+    --md: 5%;
+    --lg: 20%;
+
+    /* colors */
+    --color:  rgb(13, 115, 122);
+    --color-tr:  rgba(13, 115, 122, 0.75);
+    --main: rgb(20, 12, 34);
+    --main-tr: rgba(20, 12, 34, 0.952);
+
+    
+    --done:rgb(13, 115, 122);
+    --need: rgb(133, 67, 14);
+    --grey: rgb(107, 106, 104);
+
+
+    /* graph component dimensions */
+    --graph-height: 150px;   
+    --graph-width: 300px;
+
+    /* fonts */
+    --font : 'Orbitron', sans-serif; /* futuristic font style */
+
+    /* dev colors */
+    --slateblue: rgb(10, 6, 39);
+    --gradient: rgb(134,49,244);
+    --gradient-background: linear-gradient(90deg, rgba(134,49,244,1) 1%, rgba(110,38,140,1) 55%, rgba(64,0,255,0.9635563698135504) 100%);
+
+    --gradient-alternate: rgb(134,49,244);
+    --gradient-background-alternate: linear-gradient(304deg, rgba(134,49,244,1) 1%, rgba(110,38,140,1) 55%, rgba(64,0,255,0.9635563698135504) 100%);
+
+    --gradient-transparent: rgb(99,93,101);
+    --gradient-background-transparent: linear-gradient(94deg, rgba(99,93,101,0.8491718931968167) 40%, rgba(30,119,160,0.7932712720788043) 91%);
+
+    /* dev borders */
+    --wireframe: 2px solid darkblue;
+    --debugging: 2px solid darkred;
+    --component: 2px solid darkgreen;
+
+
+}
+.page {
+    height: 100vh;
+    background: lightcyan;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+/* graph container */
+.graph {
+
+    /* position props [ relative ] */
+    position: relative;
+
+    /* component props */
+    /* padding: var(--md); */
+    margin: 1rem;
+
+    /* graph dimension, defined in the HTML */
+    height: var(--graph-size);
+    width: var(--graph-size);
+    
+    /* dev */
+    border: var(--debugging);
+    
+    
+}
+/* linechart ul component */
+.linechart {
+    /* position: relative; */
+    
+    /* component props */
+    background: var(--main-tr);
+    list-style-type: none;
+    
+    /* chart dimensions, full parent container height */
+    height: 100%;
+    width: 100%;
+    
+    /* dev */
+    border: var(--debugging);
+}
+/* data-point element */
+.data-point {
+    /* position props */
+    position: absolute;
+
+    /* set data-points as custom variable values */
+    left: calc(var(--x) - 9.5px);
+    bottom: calc(var(--y) - 6.5px); 
+
+    /* left: var(--x);
+    bottom: var(--y); */
+
+    /* component props */
+    background: var(--done);
+    border: 2px solid var(--grey);
+    border-radius: 50%;
+    height: 12px;
+    width: 12px;
+
+    
+}
+.data-lines {
+    
+    /* position props [ absolute ] */
+    position: absolute;
+    
+    /* assign [ x , y ] variables via js */
+    left: var(--x);
+    bottom: var(--y);
+    height: 3px;
+
+    /* calc [ hypotenuse ] via js  */
+    width: calc(var(--hyp) * 1px);
+
+    /* calc [ angle ] via js */
+    transform: rotate(calc(var(--angle) * 1deg));
+    transform-origin: left bottom;
+
+    /* dev */
+    background: var(--done);
+    
+}
