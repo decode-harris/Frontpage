@@ -17,6 +17,9 @@
     <!-- js [ dashboard ]-->
     <script defer src="dashboard.js"></script>
 
+    <!-- js [ linechart ] -->
+    <script defer src="linechart.js"></script>
+
     <!-- icons -->
     <script src="https://kit.fontawesome.com/4dff4a55ad.js" crossorigin="anonymous"></script>
 
@@ -218,7 +221,7 @@
                     <div class="panel">
 
                         <!-- [ graph ] -->
-                        <div class="graph">
+                        <figure class="graph">
 
                             <!-- [ linechart ] -->                            
                             <ul class="linechart">
@@ -236,13 +239,13 @@
                                 </li>
                                 <li class="line-element" id="le_02">
                                     
-                                    <!-- [ data-lines ] -->
-                                    <div class="data-lines" id="dl_02"></div>
-                                    <!-- [ data-lines ] -->
-
                                     <!-- [ data-point ] -->
                                     <div class="data-point" id="dp_02" data-value="60"></div>
                                     <!-- [ data-point ] -->
+
+                                    <!-- [ data-lines ] -->
+                                    <div class="data-lines" id="dl_02"></div>
+                                    <!-- [ data-lines ] -->
                                     
                                 </li>
                                 <li class="line-element" id="le_03">
@@ -274,7 +277,7 @@
                                     <!-- [ data-lines ] -->
                                     
                                     <!-- [ data-point ] -->
-                                    <div class="data-point" id="dp_05" data-value="22"></div>
+                                    <div class="data-point" id="dp_05" data-value="30"></div>
                                     <!-- [ data-point ] -->
                                 
                                 </li>
@@ -283,20 +286,9 @@
                             </ul>
                             <!-- [ linechart ] -->
 
-                        </div>
+                        </figure>
                         <!-- [ graph ] -->
                     </div>
-                    <li class="panel">
-
-                        <!-- [ total ] -->
-                        <p class="total">total</p>
-                        <!-- [ total ] -->
-
-                        <!-- [ calculate ] -->
-                        <p class="calculate">calculated</p>
-                        <!-- [ calculate ] -->
-
-                    </li>
                     <!-- [ panel ] -->
                 
                 </ul>
