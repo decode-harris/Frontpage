@@ -31,8 +31,42 @@ developmenthelper = () => {
 // init [ developmenthelper ] function
 // developmenthelper();
 
+const tab = document.querySelectorAll('#tabs .tab');
+
+tabs = () => {
+    // tabs
+    // dashboard areas
+    const overview = document.querySelector('#overview');
+    const description = document.querySelector('#description');
+    const analysis = document.querySelector('#analysis');
+
+    
+
+    tab.forEach(element => {
+        element.addEventListener('click', ()=> {
+            tabsdefault();
+            
+            element.setAttribute('class', 'tab active');
+            // test
+            console.log('assign active class');
+            
+        });
+    });
 
 
+}
+tabs();
+tabsdefault = () => {
+    
+
+    // for loop [ tab ]
+    for (i = 0; i < tab.length; i++) {
+        tab[i].setAttribute('class', 'tab ');
+        console.log('number of tabs : ' +  tab[i]);
+    }
+
+    console.log('test tabs default');
+}
 
 
 
@@ -123,6 +157,10 @@ navigation = () => {
     console.log(btn);
 
 }
+
+
+
+
 
 // init [ navigation ] function
 // navigation();

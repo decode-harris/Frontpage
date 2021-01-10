@@ -28,8 +28,8 @@
 
 
     /* graph component dimensions */
-    --graph-height: 150px;   
-    --graph-width: 300px;
+    --graph-height: 200px;   
+    --graph-width: 200px;
 
     /* fonts */
     --font : 'Orbitron', sans-serif; /* futuristic font style */
@@ -52,37 +52,39 @@
 
 
 }
-.page {
-    height: 100vh;
-    background: lightcyan;
 
+/* page wrapper */
+.page {
+    /* display props [ flex ] */
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
+    width: 100%;
+
+    background: lightcyan;
 
 }
+
 /* graph container */
 .graph {
-
-    /* position props [ relative ] */
-    position: relative;
-
     /* component props */
-    /* padding: var(--md); */
     margin: 1rem;
-
+    
     /* graph dimension, defined in the HTML */
-    height: var(--graph-size);
-    width: var(--graph-size);
-    
-    /* dev */
-    border: var(--debugging);
-    
-    
+    height: var(--graph-height);
+    width: var(--graph-width);
+    width: 100%;
+    height: 100%;
+    max-width: 220px;
+    max-height: 220px;
+
 }
+
 /* linechart ul component */
 .linechart {
-    /* position: relative; */
+    /* position props [ absolute ] */
+    position: relative;
     
     /* component props */
     background: var(--main-tr);
@@ -91,22 +93,20 @@
     /* chart dimensions, full parent container height */
     height: 100%;
     width: 100%;
-    
+
     /* dev */
-    border: var(--debugging);
+    /* border: var(--debugging); */
 }
-/* data-point element */
+
+/* data-point element [ node ] */
 .data-point {
-    /* position props */
+    /* position props [ absolute ] */
     position: absolute;
 
     /* set data-points as custom variable values */
-    left: calc(var(--x) - 9.5px);
-    bottom: calc(var(--y) - 6.5px); 
-
-    /* left: var(--x);
-    bottom: var(--y); */
-
+    left: calc(var(--x) - 6.5px);
+    bottom: calc(var(--y) - 5.5px); 
+    
     /* component props */
     background: var(--done);
     border: 2px solid var(--grey);
@@ -116,8 +116,8 @@
 
     
 }
+/* data-line element [ line ] */
 .data-lines {
-    
     /* position props [ absolute ] */
     position: absolute;
     
@@ -133,7 +133,6 @@
     transform: rotate(calc(var(--angle) * 1deg));
     transform-origin: left bottom;
 
-    /* dev */
+    /* component props */
     background: var(--done);
-    
 }

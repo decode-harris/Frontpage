@@ -18,9 +18,18 @@
     <script defer src="dashboard.js"></script>
 
     <!-- js [ linechart ] -->
-    <script defer src="linechart.js"></script>
+    <!-- <script defer src="linechart.js"></script> -->
 
-    <!-- icons -->
+    <!-- js [ canvas ] -->
+    <script src="canvas.js"></script>
+
+    <!-- js [ areachart ] -->
+    <!-- <script src="areachart.js"></script> -->
+
+    <!-- lib [ canvas js ] -->
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    
+    <!-- lib [ icons ] -->
     <script src="https://kit.fontawesome.com/4dff4a55ad.js" crossorigin="anonymous"></script>
 
 
@@ -30,30 +39,11 @@
     <!-- [ container ] -->
     <section class="container">
 
-        <!-- [ nav ] -->
-        <nav class="nav">
-
-            
-            <!-- <button class="btn" id="home">home</button>
-            <button class="btn" id="apps">apps</button>
-            <button class="btn" id="coff">coff</button> -->
-
-            <!-- [ tools | view ] -->
-            <button class="tools" id="coff"><i class="fas fa-coffee"></i></button>
-            <button class="tools" id="bank"><i class="far fa-chart-bar"></i></button>
-            <button class="tools" id="pics"><i class="fas fa-photo-video"></i></button>
-            <button class="tools" id="note"><i class="fas fa-book"></i></button>
-            <!-- [ tools | view ] -->
-            
-
-        </nav>
-        <!-- [ nav ] -->
-
         <!-- [ header ] -->
         <header class="header">
             
-            <!-- [ welcome ] -->
-            <div class="welcome">
+            <!-- [ elmnts ] -->
+            <div class="elmnts" id="welcome">
                 
                 <!-- [ title ] -->
                 <h3 class="title">welcome christopher</h3>
@@ -65,17 +55,17 @@
             </div>
             <!-- [ welcome ] -->
 
-            <!-- [ tabs ] -->
-            <div class="tabs">
+            
+            <div class="elmnts" id="tabs">
 
-                <!-- [ btn ] -->
+                <!-- [ tabs ] -->
                 <button class="tab" id="overbtn">overview</button>
                 <button class="tab" id="descbtn">description</button>
                 <button class="tab" id="anlsbtn">analysis</button>
-                <!-- [ btn ] -->
+                <!-- [ tabs ] -->
                 
             </div>
-            <!-- [ tabs ] -->
+            <!-- [ elmnts ] -->
             
             
         </header>
@@ -289,6 +279,16 @@
                         </figure>
                         <!-- [ graph ] -->
                     </div>
+                    <div class="panel">
+                        <!-- [ canvas js ] -->
+                        <div id="lineChartContainer" style="height: 370px; width: 100%;"></div>
+                        <!-- [ canvas js ] -->
+
+                    </div>
+                    <div class="panel">
+                        <!--  -->
+                        <div id="areaChartContainer" style="height: 370px; width: 100%;"></div>
+                    </div>
                     <!-- [ panel ] -->
                 
                 </ul>
@@ -299,6 +299,25 @@
             
         </main>
         <!-- [ dashboard ] -->
+
+        <!-- [ footer ] -->
+        <footer class="footer">
+
+            
+            <!-- <button class="btn" id="home">home</button>
+            <button class="btn" id="apps">apps</button>
+            <button class="btn" id="coff">coff</button> -->
+
+            <!-- [ tools | view ] -->
+            <button class="tools" id="coff"><i class="fas fa-coffee"></i></button>
+            <button class="tools" id="bank"><i class="far fa-chart-bar"></i></button>
+            <button class="tools" id="pics"><i class="fas fa-photo-video"></i></button>
+            <button class="tools" id="note"><i class="fas fa-book"></i></button>
+            <!-- [ tools | view ] -->
+            
+
+        </footer>
+        <!-- [ footer ] -->
 
     </section>
     <!-- [ container ] -->
