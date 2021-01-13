@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+/* css reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* global variables */
+:root {
+
+    /* spacing */
+    --sm: 2%;
+    --md: 5%;
+    --lg: 20%;
+
+    /* colors */
+    --color:  rgb(13, 115, 122);
+    --color-tr:  rgba(13, 115, 122, 0.75);
+    --main: rgb(20, 12, 34);
+    --main-tr: rgba(20, 12, 34, 0.952);
+
+    
+    --done:rgb(13, 115, 122);
+    --need: rgb(133, 67, 14);
+    --grey: rgb(107, 106, 104);
+
+    --graphs: 150px;
+
+    /* fonts */
+    --font : 'Orbitron', sans-serif; /* futuristic font style */
+
+    /* page colors */
+    --page-box-shadow: -1px -1px 10px 0px rgba(13, 115, 122, 0.75);
+    --moz-box-shadow: -1px -1px 10px 0px rgba(13, 115, 122, 0.75);
+    --web-box-shadow: -1px -1px 10px 0px rgba(13, 115, 122, 0.75);
+
+    
+    /* dev borders */
+    --wireframe: 2px solid darkblue;
+    --debugging: 2px solid darkred;
+    --component: 2px solid darkgreen;
+
+
+}
+
+/* container component */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;   
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+
+    /* component props */
+    background: var(--main);
+    color: var(--color);
+    font-family: var(--font);
+
+    padding: var(--sm);
+
+    /* dev */
+    border: var(--wireframe);
+}
+
+ul {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(50px, auto);
+    
+    min-width: 300px;
+
+    /* dev */
+    border: var(--component);
+    /* background: lightcoral; */
+    padding: var(--sm);
+}
+ul h2 {
+    grid-column: span 3;
+}
+ul .reset {
+    grid-column: span 1;
+}
+ul li {
+    grid-column: span 2;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    padding-left: var(--sm);
+    min-height: 150px;
+    /* border: var(--wireframe); */
+
+    box-shadow: var(--page-box-shadow);
+}
+
+/* ul grid layouts */
+.x-2 {
+    grid-column: span 4;
+}
+
+.active {
+    background: var(--done);
+    color: #FFF;
+}
+
+/* ul values */
+li h3 {
+
+    /* dev */
+    border: var(--debugging);
+}
+li p {
+
+    font-size: 0.85rem;
+    letter-spacing: 0.2rem;
+    /* dev */
+    border: var(--component);
+}
+.lrg {
+    font-size: 2rem;
+
+    /* dev */
+    /* border: var(--wireframe); */
+}
+
+
+
+/* media [ tablet ]  */
+@media (min-width: 700px) {
+
+    ul {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 22px;
+        grid-auto-rows: minmax(80px, auto);
+
+        min-width: 500px;
+    }
+    ul li  {
+        grid-column: span 3;
+    
+    }
+    .x-2 {
+        grid-column: span 6;
+    }
+    ul h2 {
+        
+        grid-column: span 4;
+
+        /* display props [ flex ] */
+        display: flex;
+        align-items: center;
+
+        /* component props */
+        font-size: 1.84rem;
+        letter-spacing: 0.2rem;
+        text-transform: uppercase;
+        padding-left: var(--sm);
+
+        /* dev */
+        border: var(--component);
+    }
+    ul .reset {
+        grid-column: span 2;
+    }
+
+
+}
+
+

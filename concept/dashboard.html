@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="developer" content="Christopher Harris">
+
+    <!-- title -->
+    <title>Dashboard Component [ Development ]</title>
+
+    <!-- css [ dashboard ] -->
+    <link rel="stylesheet" href="dashboard.css">
+
+    <!-- js [ logic ] -->
+    <script defer src="index.js"></script>
+
+    <!-- js [ dashboard ]-->
+    <script defer src="dashboard.js"></script>
+
+    <!-- js [ linechart ] -->
+    <!-- <script defer src="linechart.js"></script> -->
+
+    <!-- js [ canvas ] -->
+    <script src="canvas.js"></script>
+
+    <!-- js [ areachart ] -->
+    <!-- <script src="areachart.js"></script> -->
+
+    <!-- lib [ canvas js ] -->
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    
+    <!-- lib [ icons ] -->
+    <script src="https://kit.fontawesome.com/4dff4a55ad.js" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+
+    <!-- [ container ] -->
+    <section class="container">
+
+        <!-- [ header ] -->
+        <header class="header">
+            
+            <!-- [ elmnts ] -->
+            <div class="elmnts" id="welcome">
+                
+                <!-- [ title ] -->
+                <h3 class="title">welcome christopher</h3>
+                <!-- [ title ] -->
+                
+                <!-- [dat / time ] --><!-- [dat / time ] --><!-- [dat / time ] -->
+                <!-- [dat / time ] --><!-- [dat / time ] --><!-- [dat / time ] -->
+
+            </div>
+            <!-- [ welcome ] -->
+
+            
+            <div class="elmnts" id="tabs">
+
+                <!-- [ tabs ] -->
+                <button class="tab" id="overbtn">overview</button>
+                <button class="tab" id="descbtn">description</button>
+                <button class="tab" id="anlsbtn">analysis</button>
+                <!-- [ tabs ] -->
+                
+            </div>
+            <!-- [ elmnts ] -->
+            
+            
+        </header>
+        <!-- [ header ] -->
+
+        <!-- [ dashboard ] -->
+        <main class="dashboard">
+
+            <!-- [ overview ] -->
+            <section class="overview">
+
+                <!-- [ summary ] -->
+                <ul class="dash" id="summary">
+                    
+                    <!-- [ dash item ] -->
+                    <li class="item">
+                        
+                        <!-- [ item content ] -->
+                        <p class="sml-caps">saving</p>
+                        <p class="lrg-num">400K</p>
+                        <p class="sml-low">account</p>
+                        <!-- [ item content ] -->
+
+                    </li>
+                    <li class="item">
+                        
+                        <!-- [ item content ] -->
+                        <p class="sml-caps">goal</p>
+                        <p class="lrg-num">86%</p>
+                        <p class="sml-low">holiday</p>
+                        <!-- [ item content ] -->
+
+                    </li>
+                    <li class="item">
+                        
+                        <!-- [ item content ] -->
+                        <p class="sml-caps">expense</p>
+                        <p class="lrg-num">$795</p>
+                        <p class="sml-low">living</p>
+                        <!-- [ item content ] -->
+
+                    </li>
+                    <li class="item">
+                        
+                        <!-- [ item content ] -->
+                        <p class="sml-caps">income</p>
+                        <p class="lrg-num">2,743</p>
+                        <p class="sml-low">weekly</p>
+                        <!-- [ item content ] -->
+
+                    </li>
+                    <!-- [ dash item ] -->
+
+                </ul>
+                <!-- [ summary ] -->
+
+                <!-- [ rent ] -->
+                <ul class="dash" id="rnt">
+
+                    <!-- [ panel ] -->
+                    <li class="panel">
+                        
+                        <!-- [ circle ] -->
+                        <div class="circle">
+                            
+                            <!-- [ prog ] -->
+                            <div class="prog">
+
+                                <!-- [ title ] -->
+                                <p class="percent">rent</p>
+                                <!-- [ title ] -->
+
+                            </div>
+                            <!-- [ prog ] -->
+                        </div>
+                        <!-- [ circle ] -->
+
+                        <!-- [ impact ] -->
+                        <div class="impact" style="display: none;">
+
+                            <!-- [ user ] -->
+                            <button class="user user-off" id="user1"></button>
+                            <button class="user user-off" id="user2"></button>
+                            <!-- [ user ] -->
+
+                        </div>
+                        <!-- [ impact ] -->
+                    
+                    </li>
+                    <li class="panel">
+
+                        <!-- [ chart ] -->
+                        <div class="chart">
+
+                            <!-- [ objectives ] -->
+                            <div class="objectives">
+                                <!-- [ bars ] -->
+                                <div class="bars bar1"></div>
+                                <!-- [ bars ] -->
+
+                                <!-- [ obj ] -->
+                                <p class="obj">obj: 1</p>
+                                <!-- [ obj ] -->
+
+                            </div>
+                            <div class="objectives">
+                                <!-- [ bars ] -->
+                                <div class="bars bar2"></div>
+                                <!-- [ bars ] -->
+
+                                <!-- [ obj ] -->
+                                <p class="obj">obj: 2</p>
+                                <!-- [ obj ] -->
+
+                            </div>
+                            <div class="objectives">
+                                <!-- [ bars ] -->
+                                <div class="bars bar3"></div>
+                                <!-- [ bars ] -->
+
+                                <!-- [ obj ] -->
+                                <p class="obj">obj: 3</p>
+                                <!-- [ obj ] -->
+                            </div>
+                            <div class="objectives">
+                                <!-- [ bars ] -->
+                                <div class="bars bar4"></div>
+                                <!-- [ bars ] -->
+
+                                <!-- [ obj ] -->
+                                <p class="obj">obj: 4</p>
+                                <!-- [ obj ] -->
+
+                            </div>
+                            <!-- [ objectives ] -->
+
+                        </div>
+                        <!-- [ chart ] -->
+
+                        
+
+                    </li>
+                    <div class="panel">
+
+                        <!-- [ graph ] -->
+                        <figure class="graph">
+
+                            <!-- [ linechart ] -->                            
+                            <ul class="linechart">
+                                <!-- [ li ] -->
+                                <li class="line-element" id="le_01">
+                                    
+                                    <!-- [ data-lines ] -->
+                                    <div class="data-lines" id="dl_01"></div>
+                                    <!-- [ data-lines ] -->
+
+                                    <!-- [ data-point ] -->
+                                    <div class="data-point" id="dp_01" data-value="25"></div>
+                                    <!-- [ data-point ] -->
+                                    
+                                </li>
+                                <li class="line-element" id="le_02">
+                                    
+                                    <!-- [ data-point ] -->
+                                    <div class="data-point" id="dp_02" data-value="60"></div>
+                                    <!-- [ data-point ] -->
+
+                                    <!-- [ data-lines ] -->
+                                    <div class="data-lines" id="dl_02"></div>
+                                    <!-- [ data-lines ] -->
+                                    
+                                </li>
+                                <li class="line-element" id="le_03">
+                                    
+                                    <!-- [ data-lines ] -->
+                                    <div class="data-lines" id="dl_03"></div>
+                                    <!-- [ data-lines ] -->
+
+                                    <!-- [ data-point ] -->
+                                    <div class="data-point" id="dp_03" data-value="45"></div>
+                                    <!-- [ data-point ] -->
+                                    
+                                </li>
+                                <li class="line-element" id="le_04">
+                                
+                                    <!-- [ data-lines ] -->
+                                    <div class="data-lines" id="dl_04"></div>
+                                    <!-- [ data-lines ] -->
+                                
+                                    <!-- [ data-point ] -->
+                                    <div class="data-point" id="dp_04" data-value="50"></div>
+                                    <!-- [ data-point ] -->
+
+                                </li>
+                                <li class="line-element" id="le_05">
+                                    
+                                    <!-- [ data-lines ] -->
+                                    <div class="data-lines" id="dl_05"></div>
+                                    <!-- [ data-lines ] -->
+                                    
+                                    <!-- [ data-point ] -->
+                                    <div class="data-point" id="dp_05" data-value="30"></div>
+                                    <!-- [ data-point ] -->
+                                
+                                </li>
+                                <!-- [ li ] -->
+                                
+                            </ul>
+                            <!-- [ linechart ] -->
+
+                        </figure>
+                        <!-- [ graph ] -->
+                    </div>
+                    <div class="panel">
+                        <!-- [ canvas js ] -->
+                        <div id="lineChartContainer" style="height: 370px; width: 100%;"></div>
+                        <!-- [ canvas js ] -->
+
+                    </div>
+                    <div class="panel">
+                        <!--  -->
+                        <div id="areaChartContainer" style="height: 370px; width: 100%;"></div>
+                    </div>
+                    <!-- [ panel ] -->
+                
+                </ul>
+                <!-- [ rent ] -->
+
+            </section>
+            <!-- [ overview ] -->
+            
+        </main>
+        <!-- [ dashboard ] -->
+
+        <!-- [ footer ] -->
+        <footer class="footer">
+
+            
+            <!-- <button class="btn" id="home">home</button>
+            <button class="btn" id="apps">apps</button>
+            <button class="btn" id="coff">coff</button> -->
+
+            <!-- [ tools | view ] -->
+            <button class="tools" id="coff"><i class="fas fa-coffee"></i></button>
+            <button class="tools" id="bank"><i class="far fa-chart-bar"></i></button>
+            <button class="tools" id="pics"><i class="fas fa-photo-video"></i></button>
+            <button class="tools" id="note"><i class="fas fa-book"></i></button>
+            <!-- [ tools | view ] -->
+            
+
+        </footer>
+        <!-- [ footer ] -->
+
+    </section>
+    <!-- [ container ] -->
+    
+</body>
+</html>

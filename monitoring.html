@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="developer" content="Christopher Harris">
+    
+    <!-- title -->
+    <title>Dashboard Monitoring [ Development ]</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="monitoring.css">
+    <!-- js [ logic ] -->
+    <script defer src="monitoring.js"></script>
+
+</head>
+<body>
+    
+    <!-- [ container ] -->
+    <section class="container">
+        <!-- [ app title ] -->
+        <h1>expenses</h1>
+        <!-- [ app title ] -->
+
+        <!-- [ btns ] -->
+        <div class="btns">
+            <button id="btnexp">exp</button>
+            <button id="btngol">gol</button>
+            <button id="btntrk">trk</button>
+        </div>
+        <!-- [ btns ] -->
+
+        <!-- [ list ] -->
+        <ul class="list">
+            
+            <!-- [ section heading ( weekly ) ] -->
+            <h2>weekly</h2><!-- [ add in reset for each section || update grid panels ] -->
+            <!-- [ section heading ( weekly ) ] -->
+
+            <!-- [ reset btn ] -->
+            <button class="reset" id="reset">reset</button>
+            <!-- [ reset btn ] -->
+            
+            <!-- [ exp groceries ] -->
+            <li>
+                <!-- [ exp title ] -->
+                <h3>groceries</h3>
+                <!-- [ exp title ] -->
+
+                <!-- [ exp total ] -->
+                <p> $<span class="lrg">74</span>.90</p>
+                <!-- [ exp total ] -->
+            </li>
+            <!-- [ exp groceries ] -->
+
+            <!-- [ exp transport ] -->
+            <li>
+                <!-- [ exp title ] -->
+                <h3>transport</h3>
+                <!-- [ exp title ] -->
+
+                <!-- [ exp total ] -->
+                <p>$<span class="lrg">30</span>.50</p>
+                <!-- [ exp total ] -->
+            </li>
+            <!-- [ exp transport ] -->
+            
+            <!-- [ section heading ( monthly ) ] -->
+            <h2>monthly</h2> <!-- [ add in reset for each section || update grid panels ] -->
+            <!-- [ section heading ( monthly ) ] -->
+
+            <!-- [ exp monthly ] -->
+            <li>
+                <!-- [ exp title ] -->
+                <h3>mobile</h3>
+                <!-- [ exp title ] -->
+
+                <!-- [ exp total ] -->
+                <p>$<span class="lrg">25</span>.25</p>
+                <!-- [ exp total ] -->
+            </li>
+            <!-- [ exp monthly ] -->
+
+            <!-- [ exp monthly ] -->
+            <li>
+                <!-- [ exp title ] -->
+                <h3>internet</h3>
+                <!-- [ exp title ] -->
+
+                <!-- [ exp total ] -->
+                <p><span class="lrg">$89</span>.80</p>
+                <!-- [ exp total ] -->
+            </li>
+            <!-- [ exp monthly ] -->
+
+            <!-- [ exp rent ] -->
+            <li class="x-2">
+                <!-- [ exp title ] -->
+                <h3>rent</h3>
+                <!-- [ exp title ] -->
+
+                <!-- [ exp total ] -->
+                <p> $<span class="lrg">795</span>.45</p>
+                <!-- [ exp total ] -->
+            </li>
+            <!-- [ exp rent ] -->
+
+            <!-- [ section heading ( quarter ) ] -->
+            <h2>quarter</h2><!-- [ add in reset for each section || update grid panels ] -->
+            <!-- [ section heading ( quarter ) ] -->
+
+            <!-- [ qtr water ] -->
+            <li class="x-2">
+                <!-- [ cost title ] -->
+                <h3>water</h3>
+                <!-- [ cost title ] -->
+
+                <!-- [ exp total ] -->
+                <p> $<span class="lrg">54</span>.60</p>
+                <!-- [ exp total ] -->
+            </li>
+            <!-- [ qtr water ] -->
+
+            <!-- [ qtr gas ] -->
+            <li class="x-2">
+                <!-- [ qtr title ] -->
+                <h3>gas</h3>
+                <!-- [ qtr title ] -->
+
+                <!--  [ qtr total ] -->
+                <p> $<span class="lrg">96</span>.22</p>
+                <!--  [ qtr total ] -->
+            </li>
+            <!-- [ qtr gas ] -->
+
+            <!-- [ qtr electricity ] -->
+            <li class="x-2">
+                <!-- [ qtr title ] -->
+                <h3>electricity</h3>
+                <!-- [ qtr title ] -->
+
+                <!-- [ qtr total ] -->
+                <p> $<span class="lrg">275</span>.99</p>
+                <!-- [ qtr total ] -->
+            </li>
+            <!-- [ qtr electricity ] -->
+        
+        </ul>
+        <!-- [ list ] -->
+
+
+        <!-- [ list ] -->
+        <ul class="list">
+            <!-- [ calculations ] -->
+            <h2>calculations</h2>
+            <!-- [ calculations ] -->
+
+            <div class="buttons">
+                
+                <!-- [ calculation buttons ] -->
+                <button id="week">week</button>
+                <button id="fornight">fort</button>
+                <button id="monthly">month</button>
+                <!-- [ calculation buttons ] -->
+
+            </div>
+
+            <!-- [ cal income ] -->
+            <li class="x-2">
+                <!-- [ info ] -->
+                <div class="info">
+
+                    <h3>income</h3>
+
+                    <p>$<span id="income" class="lrg">500</span>40</p>
+                </div>
+                <!-- [ info ] -->
+
+                <!-- [ remain ] -->
+                <div class="remain">
+                    <!-- [remain title ] -->
+                    <h5>remaining</h5>
+                    <!-- [remain title ] -->
+
+                    <!-- [ remain income ] -->
+                    <p>$ <span id="rmn_pay"></span> </p>
+                    <!-- [ remain income ] -->
+                </div>
+                <!-- [ remain ] -->
+                
+            </li>
+            <!-- [ cal income ] -->
+            
+            <!-- [ cal grocery ] -->
+            <li>
+                <div class="info">
+                    <h3>groceries</h3>
+                    <p><span class="calc">income - groceries</span></p>
+                    <p>$<span id="groceries" class="lrg"></span></p>
+                </div>
+                <div class="remain">
+                    <!-- [remain title ] -->
+                    <h5>remaining</h5>
+                    <!-- [remain title ] -->
+
+                    <!-- [ remain income ] -->
+                    <p>$ <span id="rmn_gro"></span> </p>
+                    <!-- [ remain income ] -->
+                </div>
+                
+
+            </li>
+            <!-- [ cal grocery ] -->
+
+            <!-- [ cal transport ] -->
+            <li>
+                <div class="info">
+                    <h3>transport</h3>
+
+                    <p><span class="calc">income - transport</span></p>
+                    <p>$<span id="transport" class="lrg"></span></p>
+                </div>
+                <div class="remain">
+                    <!-- [remain title ] -->
+                    <h5>remaining</h5>
+                    <!-- [remain title ] -->
+                    
+                    <!-- [ remain income ] -->
+                    <p> $ <span id="rmn_trs"></span> </p>
+                    <!-- [ remain income ] -->
+                </div>
+                
+
+            </li>
+            <!-- [ cal transport ] -->
+
+            
+            <!-- [ cal rent ] -->
+            <li class="x-2">
+                <div class="info">
+                    <h3>rent</h3>
+                    <p>$<span class="calc">income - rent per week</span></p>
+                    <p>$<span id="rentcost" class="lrg"></span></p>
+
+                </div>
+                <div class="remain">
+                    <!-- [remain title ] -->
+                    <h5>remaining</h5>
+                    <!-- [remain title ] -->
+
+                    <!-- [ remain income ] -->
+                    <p> $ <span id="rmn_rnt"></span> </p>
+                    <!-- [ remain income ] -->
+                </div>
+                
+
+            </li>
+            <!-- [ cal rent ] -->
+
+            
+
+            <!-- [ cal mobile ] -->
+            <li>
+                <!-- [ info ] -->
+                <div class="info">
+                    <h3>mobile</h3>
+
+                    <p>$<span id="mobilecredit" class="lrg"></span></p>
+                </div>
+                <!-- [ info ] -->
+
+                <!-- [ remain ] -->
+                <div class="remain">
+                    <!-- [ remain income ] -->
+                    <p> $ <span id="rmn_mob"></span> </p>
+                    <!-- [ remain income ] -->
+                </div>
+                <!-- [ remain ] -->
+            </li>
+            <!-- [ cal mobile ] -->
+
+            
+
+            <!-- [ cal internet ] -->
+            <li>
+                <!-- [ info ] -->
+                <div class="info">
+                    <h3>internet</h3>
+
+                    <p>$<span id="aussiebb" class="lrg"></span></p>
+                </div>
+                <!-- [ info ] -->
+
+                <!-- [ remain ] -->
+                <div class="remain">
+                    <p>$<span id="rmn_net" class="lrg"></span></p>
+                </div>
+                <!-- [ remain ] -->
+            </li>
+            <!-- [ cal internet ] -->
+
+            <!-- [ cal remaining ] -->
+            <li class="x-2">
+
+                <h2>remaining</h2>
+
+                <p>$<span id="remaining" class="lrg"></span></p>
+            </li>
+            <!-- [ cal remaining ] -->
+
+        </ul>
+        <!-- [ list ] -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- [ list ] -->
+        <ul class="list">
+
+            <!-- [ CPU ] -->
+            <li>
+                <!-- [ component title ] -->
+                <h3>CPU</h3>
+                <!-- [ component title ] -->
+
+                <!-- [ component measurement ] -->
+                <p> <span class="lrg">12</span>%</p>
+                <!-- [ component measurement ] -->
+
+                <!-- [ component speeds ] -->
+                <p><span class="lrg">4.2</span>GHz</p>
+                <!-- [ component speeds ] -->
+            </li>
+            <!-- [ CPU ] -->
+
+            <!-- [ RAM ] -->
+            <li>
+                <!-- [ component title ] -->
+                <h3>RAM</h3>
+                <!-- [ component title ] -->
+
+                <!-- [ component measurement ] -->
+                <p> <span class="lrg">12</span>%</p>
+                <!-- [ component measurement ] -->
+
+                <!-- [ component speeds ] -->
+                <p><span class="lrg">4.2</span>GHz</p>
+                <!-- [ component speeds ] -->
+            </li>
+            <!-- [ RAM ] -->
+
+            <!-- [ GPU ] -->
+            <li class="x-2">
+                <!-- [ component title ] -->
+                <h3>GPU</h3>
+                <!-- [ component title ] -->
+
+                <!-- [ component measurement ] -->
+                <p> <span class="lrg">79</span>%</p>
+                <!-- [ component measurement ] -->
+
+                <!-- [ component speeds ] -->
+                <p><span class="lrg">11</span>GB</p>
+                <!-- [ component speeds ] -->
+            </li>
+            <!-- [ GPU ] -->
+
+            <!-- [ DISK ] -->
+            <li>
+                <!-- [ component title ] -->
+                <h3>DISK</h3>
+                <!-- [ component title ] -->
+
+                <!-- [ component measurement ] -->
+                <p> <span class="lrg">966</span>GB</p>
+                <!-- [ component measurement ] -->
+
+                <!-- [ component speeds ] -->
+                <p><span class="lrg">900</span>KB/s</p>
+                <!-- [ component speeds ] -->
+            </li>
+            <!-- [ DISK ] -->
+
+            <!-- [ NET ] -->
+            <li>
+                <!-- [ component title ] -->
+                <h3>NET</h3>
+                <!-- [ component title ] -->
+
+                <!-- [ component measurement ] -->
+                <p> <span class="lrg">Ethernet 2</span></p>
+                <!-- [ component measurement ] -->
+
+                <!-- [ component speeds ] -->
+                <p><span class="lrg">109</span>Kbps</p>
+                <!-- [ component speeds ] -->
+            </li>
+            <!-- [ NET ] -->
+
+        </ul>
+        <!-- [ list ] -->
+
+        <!-- [ list ] -->
+        <ul class="list">
+
+            <!-- [ rental cost ] -->
+            <li>
+                <!-- [ rental title ] -->
+                <h3>tracking</h3>
+                <!-- [ rental title ] -->
+
+                <!-- [ rental total ] -->
+                <p> $<span class="med">1000</span> </p>
+                <!-- [ rental total ] -->
+
+                <!-- [ rental frequency ] -->
+                <p> <span class="med">week</span> </p>
+                <!-- [ rental frequency ] -->
+            </li>
+            <!-- [ rental cost ] -->
+
+        </ul>
+        <!-- [ list ] -->
+
+    </section>
+    <!-- [ container ] -->
+</body>
+</html>
