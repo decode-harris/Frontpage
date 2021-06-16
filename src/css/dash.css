@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root {
+
+    /* fonts */
+    --font : 'Orbitron', sans-serif; /* futuristic font style */
+}
+
+/* section [ container ] */
+.container {
+    border: 2px solid darkblue;
+
+    height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
+
+    font-family: var(--font);
+}
+
+/* nav [ nav ] */
+nav {
+    border: 2px solid black;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    height: 10vh;
+}
+nav button {
+
+    background: none;
+    border: 0.1rem solid #000;
+    min-height: 30px;
+    min-width: 80px;
+    font-size: 0.80rem;
+    text-transform: capitalize;
+
+    padding: 2%;
+}
+
+/* section [ dash ] */
+.dash {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    height: 100%;
+    width: 100%;
+
+    
+}
+/* article [ type ] */
+.type {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    
+    height: 100%;
+    width: 100%;
+}
+.list {
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid red; */
+}
+.items {
+    list-style-type: none;
+
+    font-size: 1.4rem;
+}
+.items span {
+    border: 2px solid red;
+}
+
+
+
+/* form component */
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+    width: 100%;
+
+    padding: 5%;
+
+
+    /* dev */
+    /* border: 2px solid red; */
+}
+
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+    width: 100%;
+}
+.form-wrapper button {
+
+    margin-top: 10%;
+    min-height: 50px;
+    max-width: 300px;
+    width: 100%;
+    background: #000;
+    color: #FFF;
+
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    border-radius: 10px;
+
+    border: 2px solid #000;
+}
+.form-control {
+    display: flex;
+    flex-direction: column;
+
+    /* padding: 5%; */
+    width: 100%;
+    max-width: 300px;
+    /* border: 2px solid red; */
+}
+.form-control label {
+    margin-top: 5%;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    padding-bottom: 2%;
+    letter-spacing: 2px;
+}
+.form-control input {
+    min-height: 50px;
+    text-align: left;
+    padding: 2%;
+
+    border-radius: 10px;
+    border: 0.1rem solid lightgray;
+    margin-bottom: 2%;
+
+}
+.form-control input:active {
+    border: none;
+}
+
+#form-week {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    background: #FFF;
+}
+

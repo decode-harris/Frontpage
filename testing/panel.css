@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+/* css reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* global variables */
+:root {
+
+    /* spacing */
+    --sm: 2%;
+    --md: 5%;
+    --lg: 20%;
+
+    /* colors */
+    --color:  rgb(13, 115, 122);
+    --color-tr:  rgba(13, 115, 122, 0.75);
+    --main: rgb(20, 12, 34);
+
+    
+    --done:rgb(13, 115, 122);
+    --need: rgb(133, 67, 14);
+    --grey: rgb(107, 106, 104);
+
+    /* --circle: calc(440 - (440 - 50) / 100); */
+
+    /* fonts */
+    --font : 'Orbitron', sans-serif; /* futuristic font style */
+
+    /* dev colors */
+    --slateblue: rgb(10, 6, 39);
+    --gradient: rgb(134,49,244);
+    --gradient-background: linear-gradient(90deg, rgba(134,49,244,1) 1%, rgba(110,38,140,1) 55%, rgba(64,0,255,0.9635563698135504) 100%);
+
+    --gradient-alternate: rgb(134,49,244);
+    --gradient-background-alternate: linear-gradient(304deg, rgba(134,49,244,1) 1%, rgba(110,38,140,1) 55%, rgba(64,0,255,0.9635563698135504) 100%);
+
+    --gradient-transparent: rgb(99,93,101);
+    --gradient-background-transparent: linear-gradient(94deg, rgba(99,93,101,0.8491718931968167) 40%, rgba(30,119,160,0.7932712720788043) 91%);
+
+    /* dev borders */
+    --wireframe: 2px solid darkblue;
+    --debugging: 2px solid darkred;
+    --component: 2px solid darkgreen;
+
+
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #03a9f4;
+    font-family: var(--font);
+}
+
+.box {
+    position: relative;
+    height: 300px;
+    width: 300px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #FFF;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+
+    /* dev */
+    border: var(--wireframe);
+}
+
+
+
+.progress-ring__circle {
+    /* 2 value attributes [ 0 : dash length || 1 : dash separation length */
+    /* stroke-dasharray: 10 1; */
+    stroke-dasharray: 10 12;
+    transition: stroke-dashoffset 0.35s;
+    transform: rotate(90deg);
+    transform-origin: 50% 50%;
+}
+
+
+
+/* svg {
+    height: 250px;
+    width: 250px;
+}
+svg circle {
+    stroke-width: 10;
+    stroke: var(--done);
+    stroke-dasharray: 440;
+    stroke-dashoffset: 440;
+    fill: blueviolet;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* test 01 */
+.box .percent {
+    height: 150px;
+    width: 150px;
+    
+
+    /* border: var(--debugging); */
+}
+
+.box .percent svg {
+    position: relative;
+    height: 150px;
+    width: 150px;
+
+    /* border: var(--debugging); */
+}
+
+.box .percent svg circle {
+    height: 150px;
+    width: 150px;
+    fill: transparent;
+    stroke-width: 10;
+    transform: translate(5px, 5px);
+
+    /* bar progress [ 0 % ] */
+    stroke-dasharray: 440;
+    stroke-dashoffset: 440;
+    stroke-linecap: round;
+
+}
+.box .percent svg circle:nth-child(1) {
+    /* stroke: blue; */
+    stroke-dashoffset: 0;
+
+    fill: transparent;
+    stroke-width: 10;
+    
+    
+}
+.box .percent svg .circle2 {
+    stroke: red;
+    stroke-dashoffset: 220;
+    
+
+    /* stroke-dashoffset: calc(440 - ( 440 * 50 ) / 100); */
+
+    /* dev */
+    /* border: var(--wireframe); */
+    
+}
+
+
+.box .percent .data {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--done);
+}
+
+.box .percent .data h2 {
+
+    font-size: 48px;
+}
+.box .percent .data h2 span {
+    font-size: 24px;
+}
+.box .text {
+    padding: 10px 0 0;
+    color: var(--done);
+    text-transform: capitalize;
+    font-size: 18px;
+    text-align: center;
+    
+}

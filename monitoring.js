@@ -1,6 +1,6 @@
 
 views = () => {
-    const ul = document.querySelectorAll('ul');
+    const ul = document.querySelectorAll('.list');
 
     for (let i = 0; i < ul.length; i++) {
 
@@ -129,11 +129,13 @@ for (let i = 0; i < p.length; i++) {
 
 }
 
+
+// function calculations() {}
 calculations = () => {
 
     // weeks in 1 month
     let week = 4;
-
+    
     // income [ weekly ]
     let pay = 500;
 
@@ -203,18 +205,18 @@ calculations = () => {
 
     // remaining amount [ rent ]
     remaining = (remaining - perweek_rnt);
-    rmn_rnt.innerHTML = remaining;
+    rmn_rnt.innerHTML = Math.trunc(remaining);
 
     // remaining amount [ mobile ]
     remaining = (remaining - perweek_mob);
-    rmn_mob.innerHTML = remaining;
+    rmn_mob.innerHTML = Math.trunc(remaining);
 
     // remaining amount [ internet ]
     remaining = (remaining - perweek_net);
-    rmn_net.innerHTML = remaining;
+    rmn_net.innerHTML = Math.trunc(remaining);
 
     let remaining_total = document.querySelector('#remaining');
-    remaining_total.innerHTML = remaining;
+    remaining_total.innerHTML = Math.trunc(remaining);
 
     
 
