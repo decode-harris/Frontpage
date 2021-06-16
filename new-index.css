@@ -112,12 +112,30 @@ section h1 {
 
     height: 100%;
 
-    background: lightcoral;
+    background: rgb(30, 177, 47);
     color: #FFF;
     text-decoration: none;
     font-size: 1.25rem;
 }
 
+/* data output component */
+.data {
+
+    display: flex;
+    flex-direction: column;
+
+    /* dev */
+    border: var(--wirframe);
+}
+.data .items {
+    font-size: 0.65rem;
+
+    /* dev */
+    border: var(--debugging);
+}
+
+
+/* form component */
 form {
     display: flex;
     flex-direction: column;

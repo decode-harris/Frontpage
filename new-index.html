@@ -9,7 +9,10 @@
     <link rel="stylesheet" href="new-index.css">
 
     <!-- js -->
-    <script defer src="new-index.js"></script>
+    <script defer src="new-js/state.js"></script>
+    <script defer src="new-js/data.js"></script>
+    <script defer src="new-js/display.js"></script>
+    <script defer src="new-js/edit.js"></script>
 
     <!-- lib [ font awesome ] -->
     <script src="https://kit.fontawesome.com/4dff4a55ad.js" crossorigin="anonymous"></script>
@@ -115,7 +118,8 @@
                 <ul class="data" id="data">
                     
                 </ul>
-                <h4>deducations : <span id="deducations"></span></h4>
+                <h4>starting : <span id="starting"></span></h4>
+                <h4>deductions : <span id="deductions"></span></h4>
                 <h4>remaining : <span id="remaining"></span></h4>
             </article>
 
@@ -127,7 +131,7 @@
 
                     <!-- form elmnts -->
                     <div class="form-elmnts">
-                        <label for="payment">earnings</label>
+                        <label for="payment" id="payment-label">earnings</label>
                         <input type="number" id="payment">
                     </div>
                     <div class="form-elmnts">
