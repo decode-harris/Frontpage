@@ -26,6 +26,9 @@ const list = document.querySelector('#list')
 // button [ create ] selector
 const create = document.querySelector('#create');
 
+// select all [ notes ] list element
+let notes = document.querySelectorAll('.notes');
+
 // click event [ create ] button
 create.addEventListener('click', ()=> {
 
@@ -45,51 +48,58 @@ const save = document.querySelector('#save');
 // click event [ save ] button
 save.addEventListener('click', (e)=> {
 
+    // prevent form submit
     e.preventDefault();
 
-    // validate form display properties
-    if (form.style.display != 'none') {
-
-        // assign form display back to default [ none ]
-        form.style.display = 'none';
-
-        // test
-        console.log('form has been removed');
-
-        // init function [ createNotes ]
-        createNotes();
-
-    }
+    // init [ validateForm ] function
+    validateForm();
 
 });
 
-// select form input elements
-let title = document.querySelector('#title');
-let text = document.querySelector('#text');
+// function [ validateForm ]
+validateForm = () => {
+
+    // select title & text values
+    let title = document.querySelector('#title');
+    let text = document.querySelector('#text');
+
+    if (title.value === '' || title.value === null && text.value === '' || text.value === null) {
+        // init [ deleteNote ] function
+        deleteNote();
+        // test
+        console.log('validate : delete note');
+    }
+    else {
+        // init [ createNotes ] function
+        createNotes();
+        // get title & text values
+        console.log('title : ' + title.value +  ' , ' + 'text : ' + text.value);
+        // test
+        console.log('validate : create note');
+    }
+
+    // test PROCESS
+    console.log('function : validate');
+}
 
 // function [ createNotes ]
 createNotes = () => {
 
+    // validate form display properties
+    if (form.style.display != 'none') {
+        // assign form display back to default [ none ]
+        form.style.display = 'none';
+        // test
+        console.log('validate : form elements removed');
+    }
+
+    // select title & text values
+    let title = document.querySelector('#title');
+    let text = document.querySelector('#text');
+
     // test data pass-through
-    console.log(title.value);
-    console.log(text.value);
-
-    // create the note element
-    let note = document.createElement('li');
-    let noteTitle = document.createElement('h4');
-    let noteText = document.createElement('p');
-
-    // assign note attributes & classes
-    note.className = 'notes';
-    noteTitle.className = 'title';
-    noteText.className = 'text';
-    
-    // assign input values to note elements
-    noteTitle.innerHTML = title.value;
-    noteText.innerHTML = text.value;
-
-    // select all [ notes ] list element
-    let notes = document.querySelectorAll('.notes');
+    console.log('create : title = ' + title.value);
+    console.log('create : text = ' + text.value);
 
     // test notes length & creation
     console.log('notes length : ' + notes.length);
@@ -97,10 +107,20 @@ createNotes = () => {
     // validate number of notes appended to list element
     if (notes.length >= 0 && notes.length <= 5) {
 
-        // set title & text inputs back to default
-        title.innerHTML = '';
-        text.innerHTML = '';
+        // create the note element
+        let note = document.createElement('li');
+        let noteTitle = document.createElement('h4');
+        let noteText = document.createElement('p');
+
+        // assign note attributes & classes
+        note.className = 'notes';
+        noteTitle.className = 'title';
+        noteText.className = 'text';
         
+        // assign input values to note elements
+        noteTitle.innerHTML = title.value;
+        noteText.innerHTML = text.value;
+
         // attach title & text values to note element
         note.appendChild(noteTitle);
         note.appendChild(noteText);
@@ -108,105 +128,131 @@ createNotes = () => {
         // attach the note element to the list HTML grid element
         list.appendChild(note);
 
-        // test
-        console.log('Notes : IF = assigning note element');
 
         // init [ editNotes ] function
         editNotes();
-        
-        return
+
+        // set form input values back to default [ empty string ]
+        title.value = '';
+        text.value = '';
+
+        // test
+        console.log('notes num : ' + notes.length);
+
     }
     else {
         alert('too many notes have been created');
     }
-    
-    // test PROCESS
-    console.log('createNotes : active');
 
-    
+    // test PROCESS
+    console.log('function : CREATE NOTES');
+
 }
 
 // function [ editNotes ] 
 editNotes = () => {
 
+    // selct all [ notes ] elements
     let notes = document.querySelectorAll('.notes');
 
-    let editing = 'editing';
-
-    
-    
-    });
-
-    // set new click event [ save ] button
-    save.addEventListener('click', ()=> {
-
-        let title = document.querySelector('#title');
-    let text = document.querySelector('#text');
-    
+    // setup notes foreach loop
     notes.forEach(element => {
 
         // click event [ notes ]
         element.addEventListener('click', ()=> {
 
+            // set an editing variable
+            let editing = 'editing';
+            // set element ID to editing value
+            element.id = editing;
 
+            if (save.id != 'edit') {
+                
+                save.id = 'edit';
+
+                let editTitle = document.querySelector('#editing .title');
+                let editText = document.querySelector('#editing .text');
+
+                // set edited title values to HTML
+                editTitle.innerHTML = title.value;
+                editText.innerHTML = text.value;
+
+                // test
+                console.log(editTitle);
+                console.log(editText);
+
+                // test
+                console.log('title as : ' + editTitle.value);
+                
+            }
+            if (element.id === editing) {
+                editing.style.display = 'none';
+                element.id = '';
+
+            }
+            else {
+                
+                // test
+                console.log('');
+                
+            }
+            
             // re-assign form display back to visible [ flex ]
             form.style.display = 'flex';
-
-            // change event [ title ] input element
-            title.addEventListener('change', ()=> {
-                
-                newTitle = title.value;
-
-                let editTitle = document.querySelectorAll('#editing .title');
-
-                editTitle.innerHTML = newTitle;
-                
-                // test
-                console.log('edit title : ' + editTitle);
-            });
-
-            text.addEventListener('change', ()=> {
-
-                newText = text.value;
-
-                let editText = document.querySelectorAll('#editing .text');
-
-                editText.innerHTML = newText;
-
-                // test
-                console.log('edit text : ' + editText);
-            });
-
-            // set element ID to [ editing ] value
-            element.id = '' + editing;
-
-
-            console.log('edit title : ' + element.firstChild.value);
+            save.id = 'edit';
 
             
-            // test PROCESS
-            console.log('editNotes : element clicked');
+            
+            
 
-            return
+            
+            // test
+            console.log('edit element : ' + text.value);
+
+            // selected edit title element
+            let editTitle = document.querySelectorAll('#editing .title');
+            // selected edit text element
+            let editText = document.querySelectorAll('#editing .text');
+            // apply selected edit title element
+            editTitle.innerHTML = title.value;
+            // apply selected edit text element
+            editText.innerHTML = text.value;
+            
+            // select [ edit ] button once created
+            let edit = document.querySelector('#edit');
+            console.log('edit notes : event btn = ' + edit);
+
+            // click event [ edit ] button
+            edit.addEventListener('click', (e)=> {
+
+                // prevent form submit
+                e.preventDefault();
+
+                // init [ validateForm ] function
+                validateForm();
+
+            });
+
+            // test
+            console.log('function : EDIT NOTES');
         });
-        
     });
 
 }
 
-emptyNotes = () => {
+// function [ deleteNote ] 
+deleteNote = () => {
 
-    // select all [ notes ] elements
-    let notes = document.querySelectorAll('.notes');
+    // select form input elements
+    let title = document.querySelector('#title');
+    let text = document.querySelector('#text');
 
-    // forEach [ notes ]
-    notes.forEach(element => {
+    // let emptyTitle = document.querySelectorAll('.title');
+    // let emptyText = document.querySelectorAll('.text');
 
-            // click event [ notes ]
-            element.addEventListener('click', ()=> {
+    // test
+    console.log('function : delete note');
 
-            })
-    });
 }
 
 // function [ defaultProperties ]
