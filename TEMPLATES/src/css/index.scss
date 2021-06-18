@@ -1,0 +1,13 @@
+// css reset
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+// css variables
+:root {
+    --wireframe: 2px solid darkblue;
+    --debugging: 2px solid darkred;
+    --component: 2px solid darkgreen;
+}

@@ -3,354 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Christopher Harris">
-    <meta name="developer" content="Christopher Harris">
+    <title>Frontpage Application</title>
 
-    <title>App [ Development ]</title>
-    
     <!-- css -->
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="src/css/index.css">
 
-    <!-- icons -->
-    <script src="https://kit.fontawesome.com/4dff4a55ad.js" crossorigin="anonymous"></script>
-
-    <!-- script -->
-    <script defer src="index.js"></script>
-
+    <!-- scripts -->
+    <script defer src="src/js/index.js"></script>
 </head>
 <body>
 
-    <!-- [ page ] -->
-    <section class="page">
+    <!-- page -->
+    <div class="page">
 
-        <!-- [ header ] -->
+        <!-- header -->
         <header class="header">
 
-            <!-- [ elmnts ] -->
-            <div class="elmnts transparent">
-
-                
-            </div>
-            <div class="elmnts transparent">
-                <!-- [ welcome ] -->
-                <h3 class="welcome">welcome christopher</h3>
-                <!-- [ welcome ] -->
-
-                <!-- [ time ] -->
-                <div class="time"></div>
-                <!-- [ time ] -->
-
-                <!-- [ date ] -->
-                <div class="date"></div>
-                <!-- [ date ] -->
+            <!-- msg -->
+            <p class="msg">
+                welcome back,
+            </p>
+            <!-- msg -->
             
-            </div>
-            <!-- [ elmnts ] -->
-        
+            <!-- name -->
+            <h3 id="name"></h3>
+            <!-- name -->
+
+
+            <!-- btn [ menu ] -->
+            <button class="btn" id="menu">menu</button>
+            <!-- btn [ menu ] -->
+
+
         </header>
-        <!-- [ header ] -->
-        
+        <!-- header -->
 
-        <!-- [ ul ] -->
-        <ul class="start" id="#start">
+        <!-- main -->
+        <main class="main">
 
-            <!-- 
+            <!-- frontpage application -->
+            <section class="content" id="frontpage"></section>
+            <!-- frontpage application -->
 
-                start buttons
-                1. coffee - reddit, pintrest, discord
-                2. google - drive, youtube, email
-                3. graphs - expenses, upcoming bills
-                4. develop - github, mdn, visual studio
-                
-             -->
-            
-            <!-- mobile applications -->
-            <li class="gunmetal">
+            <!-- finance application -->
+            <section class="content" id="finance"></section>
+            <!-- finance application -->
 
-                <button id="coffee">
-                    <i class="fas fa-coffee"></i>
-                </button>
-            
-            </li>
-            <li class="gunmetal">
+            <!-- notetaking application -->
+            <section class="content" id="notetaking"></section>
+            <!-- notetaking application -->
 
-                <button id="google">
-                    <i class="fab fa-chrome"></i>
-                </button>
-            
-            </li>
-            <li class="gunmetal">
+        </main>
+        <!-- main -->
 
-                <button id="webapp">
-                    <i class="far fa-chart-bar"></i>
-                </button>
-            
-            </li>
-            <li class="gunmetal">
-
-                <button id="webdev">
-                    <i class="fab fa-dev"></i>
-                </button>
-            
-            </li>
-            <!-- mobile applications -->
-        
-        </ul>
-        <!-- [ ul ] -->
-
-        <!-- [ coffee ] -->
-        <ul class="prototype" id="coffeelist">
-            <li>
-                <h3>morning coffee</h3>
-            </li>
-            <li>
-                
-                <!-- [ app link ] -->
-                <a href="https://www.reddit.com/">
-                    <i class="fab fa-reddit-square"></i>
-                    <span class="desc">reddit</span>
-                </a>
-                <!-- [ app link ] -->
-                
-            </li>
-            <li>
-
-                <!-- [ app link ] -->
-                <a href="https://pintrest.com/">
-                    <i class="fab fa-pinterest-square"></i>
-                    <span class="desc">pintrest</span>
-                </a>
-                <!-- [ app link ] -->
-                
-            </li>
-            <li>
-
-                <!-- [ app link ] -->
-                <a href="https://discord.com/">
-                    <i class="fab fa-discord"></i>
-                    <span class="desc">discord</span>
-                </a>
-                <!-- [ app link ] -->
-                
-            </li>
-        </ul>
-        <!-- [ prototype ] -->
-
-        <!-- [ google ] -->
-        <ul class="prototype" id="googlelist">
-            <li>
-                <h3>google applications</h3>
-            </li>
-            <li>
-                <!-- [ app link ] -->
-                <a href="">
-                    <i class="fas fa-envelope"></i>
-                    <span class="desc">mail</span>
-                </a>
-                <!-- [ app link ] -->
-            </li>
-            <li>
-                <!-- [ app link ] -->
-                <a href="https://youtube.com">
-                    <i class="fab fa-youtube-square"></i>
-                    <span class="desc">youtube</span>
-                </a>
-                <!-- [ app link ] -->
-            </li>
-            <li>
-                <!-- [ app link ] -->
-                <a href="https://youtube.com">
-                    <i class="fab fa-google-drive"></i>
-                    <span class="desc">drive</span>
-                </a>
-                <!-- [ app link ] -->
-                
-            </li>
-            
-        </ul>
-        <!-- [ google ] -->
-
-        <!-- [ webapp ] -->
-        <ul class="prototype" id="webapplist">
-            
-            <li>
-                <!-- [ list title ] -->
-                <h3>web applications</h3>
-                <!-- [ list title ] -->
-            </li>
-            <li>
-                <!-- [ app link ] -->
-                <a href="">
-                    <i class="far fa-money-bill-alt"></i>
-                    <span class="desc">expenses</span>
-                </a>
-                <!-- [ app link ] -->
-            </li>
-            <li>
-                <!-- [ app link ] -->
-                <a href="">
-                    <i class="fas fa-home"></i>
-                    <span class="desc">rental</span>
-                </a>
-                <!-- [ app link ] -->
-            </li>
-            <li>
-                <!-- [ app link ] -->
-                <a href="">
-                    <i class="far fa-list-alt"></i>
-                    <span class="desc">notes</span>
-                </a>
-                <!-- [ app link ] -->
-            </li>
-            
-        </ul>
-        <!-- [ webapp ] -->
-
-        <!-- [ webdev ] -->
-        <ul class="prototype" id="webdevlist">
-            <li>
-                <h3>web development</h3>
-            </li>
-            <li>
-                
-                <!-- [ app link ] -->
-                <a href="">
-                    <i class="fab fa-github-square"></i>
-                    <span class="desc">github</span>
-                </a>
-                <!-- [ app link ] -->
-
-            </li>
-            <li>
-
-                <!-- [ app link ] -->
-                <a href="">
-                    <i class="fab fa-firefox"></i>
-                    <span class="desc">mozilla</span>
-                </a>
-                <!-- [ app link ] -->
-
-            </li>
-            <li>
-
-                <!-- [ app link ] -->
-                <a href="">
-                    <i class="fab fa-codepen"></i>
-                    <span class="desc">code</span>
-                    
-                </a>
-                <!-- [ app link ] -->
-
-            </li>
-
-        </ul>
-        <!-- [ webdev ] -->
-
-
-        <!-- [ albums ] -->
-        <ul class="albums" id="albums">
-
-            <li>
-                gallery 001
-            </li>
-            <li>
-                gallery 002
-            </li>
-            <li>
-                gallery 003
-            </li>
-
-        </ul>
-        <!-- [ albums ] -->
-
-
-
-
-
-
-
-
-
-
-
-        <!-- [ later view ] -->
-        <ul class="banking">
-
-            <li class="gunmetal">
-
-                <!-- [ app link ] -->
-                <a href="">
-                    <i class="far fa-chart-bar"></i>
-                    <span class="desc">charts</span>
-                </a>
-                <!-- [ app link ] -->
-
-                <button id="folders" style="display: none;">
-                    <i class="fas fa-folder-plus"></i>
-                </button>
-                
-
-                
-                
-            </li>
-        </ul>
-        
-        <ul class="bookmarks"></ul>
-        <!-- [ later view ] -->
-        
-        <!-- [ ul ] pc-apps -->
-        <ul class="pc-apps" style="display: none;">
-            <!-- pc applications -->
-            <li class="gunmetal">
-                <i class="fas fa-headphones-alt"></i>
-                <p class="desc">music</p>
-            </li>
-            <li class="gunmetal">
-                <i class="fas fa-cube"></i>
-                <p class="desc">apps</p>
-            </li>
-            <li class="gunmetal">
-                <i class="fab fa-battle-net"></i>
-                <p class="desc">battlenet</p>
-            </li>
-            <li class="gunmetal">
-                <i class="fab fa-steam-square"></i>
-                <p class="desc">steam</p>
-            </li>
-            <li class="gunmetal">
-                <i class="fab fa-dev"></i>
-                <p class="desc">visual studio code</p>
-            </li>
-            <li class="gunmetal">
-                <i class="far fa-calendar-alt"></i>
-                <p class="desc">calendar</p>
-            </li>
-            
-            
-        </ul>
-        <!-- [ ul ] pc-apps -->
-
-        <!-- [ footer ] -->
+        <!-- footer -->
         <footer class="footer">
 
-
-            <!-- [ tools | view ] -->
-            <button class="tools" id="coff"><i class="fas fa-coffee"></i></button>
-            <button class="tools" id="bank"><i class="fas fa-wallet"></i></button>
-            <button class="tools" id="photo"><i class="fas fa-photo-video"></i></button>
-            <button class="tools" id="book"><i class="fas fa-book"></i></button>
-            <!-- [ tools | view ] -->
-
-            <!-- removed settings icon [ create settings panel ] -->
-            <button class="tools" id="menu"><i class="fas fa-cog"></i></button>
-            <!-- removed settings icon [ create settings panel ] -->
-            
+            <!-- controls -->
+            <ul class="controls">
+                <!-- units -->
+                <li class="units">lightmode / darkmode</li>
+                <li class="units">application settings</li>
+                <li class="units">account information</li>
+                <!-- units -->
+            </ul>
+            <!-- controls -->
 
         </footer>
-        <!-- [ footer ] -->
+        <!-- footer -->
 
-    </section>
-    <!-- [ page ] -->
+    </div>
+    <!-- page -->
     
 </body>
 </html>
