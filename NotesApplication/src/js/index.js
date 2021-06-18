@@ -12,13 +12,20 @@ console.log(notesFooter);
 let form = document.querySelector('#form');
 form.style.display = 'none';
 
-// button create selector
+// button [ create ] selector
 const create = document.querySelector('#create');
 
+// click event [ create ] button
 create.addEventListener('click', ()=> {
 
     if (form.style.display != 'flex') {
         form.style.display = 'flex';
+
+        // select title input element
+        let title = document.querySelector('#title');
+
+        // set user focus to title input element
+        title.focus();
     }
 
     // init [ createTitle ] function
@@ -50,10 +57,10 @@ createTitle = () => {
 
             // remove title form from view
             form.style.display = 'none';
-            
-            // init [ createNotes ] function
-            createNotes();
         }
+
+        // init [ createNotes ] function
+        createNotes();
 
     });
 
@@ -71,10 +78,8 @@ createNotes = () => {
 
     // select all current item elements
     let items = document.querySelectorAll('.items');
-
     console.log('number of items : ' + items.length)
-
-
+    
     // validate amount of item elements
     if (items.length >= 0 && items.length <= 8) {
 
@@ -99,6 +104,15 @@ createNotes = () => {
 
         // append newly created note to list element
         list.appendChild(noteItems);
+
+        // init function [ editNotes ]
+        editNotes();
+
+        // init function [ deleteNotes ]
+        deleteNotes();
+
+        return
+    
     }
     else {
 
@@ -106,15 +120,14 @@ createNotes = () => {
         alert('too many notes have been created!');
     }
     
-    // init function [ editNotes ]
-    editNotes();
-
-    // init function [ deleteNotes ]
-    deleteNotes();
+    
 }
 
 // function [ editNotes ]
 editNotes = () => {
+
+    // button [ save ] selector
+    const save = document.querySelector('#save');
 
     let notes = document.querySelectorAll('.items');
 
@@ -132,12 +145,25 @@ editNotes = () => {
 
                 // assign element ID as editing value
                 element.id = editing;
-            }
-            else {
 
-                // revert element ID to default [ empty string ]
-                element.id = '';
+                notesFooter.style.display = 'flex';
+
+                element.appendChild(notesFooter);
+
+                // click event [ save ] button
+                save.addEventListener('click', ()=> {
+
+                    // assign element ID to [ empty string]
+                    element.id = '';
+
+                    // test
+                    console.log('save btn clicked');
+                    
+
+                });
             }
+            else {}
+            
         });
         
     });
