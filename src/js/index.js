@@ -85,14 +85,6 @@ validateForm = () => {
 // function [ createNotes ]
 createNotes = () => {
 
-    // validate form display properties
-    if (form.style.display != 'none') {
-        // assign form display back to default [ none ]
-        form.style.display = 'none';
-        // test
-        console.log('validate : form elements removed');
-    }
-
     // select title & text values
     let title = document.querySelector('#title');
     let text = document.querySelector('#text');
@@ -129,9 +121,6 @@ createNotes = () => {
         list.appendChild(note);
 
 
-        // init [ editNotes ] function
-        editNotes();
-
         // set form input values back to default [ empty string ]
         title.value = '';
         text.value = '';
@@ -139,6 +128,18 @@ createNotes = () => {
         // test
         console.log('notes num : ' + notes.length);
 
+    }
+    // validate form display properties
+    if (form.style.display != 'none') {
+        // assign form display back to default [ none ]
+        form.style.display = 'none';
+        // test
+        console.log('validate : form elements removed');
+
+        // init [ editNotes ] function
+        editNotes();
+        
+        return
     }
     else {
         alert('too many notes have been created');
@@ -161,20 +162,27 @@ editNotes = () => {
         // click event [ notes ]
         element.addEventListener('click', ()=> {
 
+            // set [ save ] button ID as [ edit ] button ID
+            save.id = 'edit';
+
             // set an editing variable
             let editing = 'editing';
+            
             // set element ID to editing value
             element.id = editing;
 
             if (save.id != 'edit') {
-                
-                save.id = 'edit';
 
+                // re-assign form display back to visible [ flex ]
+                form.style.display = 'flex';
+                
+                // select only the [ editing ] title & text values
                 let editTitle = document.querySelector('#editing .title');
                 let editText = document.querySelector('#editing .text');
 
-                // set edited title values to HTML
+                // apply selected edit title element
                 editTitle.innerHTML = title.value;
+                // apply selected edit text element
                 editText.innerHTML = text.value;
 
                 // test
@@ -182,13 +190,10 @@ editNotes = () => {
                 console.log(editText);
 
                 // test
-                console.log('title as : ' + editTitle.value);
+                console.log('FUNCTION EDIT :  title =  ' + title.value);
+                // test
+                console.log('text as : ' + text.value);
                 
-            }
-            if (element.id === editing) {
-                editing.style.display = 'none';
-                element.id = '';
-
             }
             else {
                 
@@ -197,26 +202,12 @@ editNotes = () => {
                 
             }
             
-            // re-assign form display back to visible [ flex ]
-            form.style.display = 'flex';
-            save.id = 'edit';
+            
 
             
             
             
 
-            
-            // test
-            console.log('edit element : ' + text.value);
-
-            // selected edit title element
-            let editTitle = document.querySelectorAll('#editing .title');
-            // selected edit text element
-            let editText = document.querySelectorAll('#editing .text');
-            // apply selected edit title element
-            editTitle.innerHTML = title.value;
-            // apply selected edit text element
-            editText.innerHTML = text.value;
             
             // select [ edit ] button once created
             let edit = document.querySelector('#edit');
