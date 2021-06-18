@@ -133,26 +133,49 @@ editNotes = () => {
 
     let editing = 'editing';
 
-    let title = document.querySelector('#title');
+    
+    
+    });
+
+    // set new click event [ save ] button
+    save.addEventListener('click', ()=> {
+
+        let title = document.querySelector('#title');
     let text = document.querySelector('#text');
-
-
-
+    
     notes.forEach(element => {
 
         // click event [ notes ]
         element.addEventListener('click', ()=> {
 
 
-            // set new values
-            newTitle = title.value;
-            newText = text.value
-
-            console.log('edit notes for : ' + newTitle);
-            console.log('edit notes for : ' + newText);
-
             // re-assign form display back to visible [ flex ]
             form.style.display = 'flex';
+
+            // change event [ title ] input element
+            title.addEventListener('change', ()=> {
+                
+                newTitle = title.value;
+
+                let editTitle = document.querySelectorAll('#editing .title');
+
+                editTitle.innerHTML = newTitle;
+                
+                // test
+                console.log('edit title : ' + editTitle);
+            });
+
+            text.addEventListener('change', ()=> {
+
+                newText = text.value;
+
+                let editText = document.querySelectorAll('#editing .text');
+
+                editText.innerHTML = newText;
+
+                // test
+                console.log('edit text : ' + editText);
+            });
 
             // set element ID to [ editing ] value
             element.id = '' + editing;
@@ -166,24 +189,24 @@ editNotes = () => {
 
             return
         });
-
-
-
-
+        
     });
 
-    // set new click event [ save ] button
-    save.addEventListener('click', ()=> {
+}
 
-        // input title [ editing ]
-        let title = document.querySelector('#title');
-        // input text [ editing ]
-        let text = document.querySelector('#text');
+emptyNotes = () => {
 
-        console.log('new save' + title.value);
-        console.log('new save' + text.value);
+    // select all [ notes ] elements
+    let notes = document.querySelectorAll('.notes');
+
+    // forEach [ notes ]
+    notes.forEach(element => {
+
+            // click event [ notes ]
+            element.addEventListener('click', ()=> {
+
+            })
     });
-
 }
 
 // function [ defaultProperties ]
