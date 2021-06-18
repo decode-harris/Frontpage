@@ -202,13 +202,6 @@ editNotes = () => {
                 
             }
             
-            
-
-            
-            
-            
-
-            
             // select [ edit ] button once created
             let edit = document.querySelector('#edit');
             console.log('edit notes : event btn = ' + edit);
