@@ -15,7 +15,7 @@
         -createNotes [ create note component ]
         -defaultProperties [ set application default properties ]
     
-*/
+*/ 
 
 // form [ form ] selector
 const form = document.querySelector('#form');
