@@ -82,8 +82,18 @@ main {
 
     // main section [ content ]
     section {
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
+
         height: 100%;
+        width: 100%;
         overflow: hidden;
+
+        border: 2px solid #FFF;
+
+        
+        
     }
 }
 // page [ footer ]
@@ -290,8 +300,12 @@ form .btn i {
     grid-auto-rows: minmax(50px, auto);
     gap: 10px;
 
+    // align-items: center;
+    // justify-content: center;
+
     // dimensions & spacing
     height: 100%;
+    width: 100%;
     padding: 20px;
 
     position: relative;
@@ -308,14 +322,31 @@ form .btn i {
     min-height: 100px;
     max-height: 150px;
 
+    overflow: hidden;
+
     border: 2px solid #FFF;
     // dev
     // border: var(--component);
 }
-.items .title {
-    padding-bottom: 2%;
+.notes .title {
+    text-decoration: underline;
+    padding-bottom: 4%;
     text-decoration: underline;
 }
-.items .text {
+.notes .text {
     font-style: italic;
+}
+
+.helper {
+    position: absolute;
+    right: 4%;
+    bottom: 10vh;
+    max-width: 250px;
+    font-size: 1.15rem;
+    font-style: italic;
+    
+    text-transform: capitalize;
+    letter-spacing: 0.12rem;
+
+    // border: 2px solid red;
 }
