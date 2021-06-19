@@ -172,6 +172,7 @@ form {
         // dev
         border: var(--wireframe);
     }
+
     // form ul [ controls ]
     .controls {
         // display props [ flex ]
@@ -195,6 +196,7 @@ form {
         color: #FFF;
         font-style: 1.2rem;
     }
+
     // form input [ wrapper ] 
     .wrapper {
         // position props [ absolute ] : attached to form
@@ -202,6 +204,9 @@ form {
         top: 10vh;
         left: 0;
         width: 100%;
+
+        display: flex;
+        flex-direction: column;
     }
     input {
         // dimensions & spacing
@@ -256,40 +261,17 @@ form {
     textarea:focus {
         border: none;
     }
+    .btn {
+        height: 40px;
+        min-width: 80px;
+        // dev
+        border: var(--debugging);
+    }
+    .btn i {
+        font-size: 1.25rem;
+    }
     
 }
-
-
-
-
-form .btn {
-
-    height: 40px;
-    min-width: 80px;
-    // dev
-    border: var(--debugging);
-}
-form .btn i {
-    font-size: 1.25rem;
-}
-
-
-// note elements
-#editing {
-    
-    // dev
-    background: rgb(91, 92, 92);
-}
-#footer-note {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 10vh;
-
-    z-index: 50;
-}
-
 
 // unordered list elements
 .list {
@@ -321,22 +303,22 @@ form .btn i {
     padding: 3%;
     min-height: 100px;
     max-height: 150px;
-
     overflow: hidden;
-
     border: 2px solid #FFF;
-    // dev
-    // border: var(--component);
-}
-.notes .title {
-    text-decoration: underline;
-    padding-bottom: 4%;
-    text-decoration: underline;
-}
-.notes .text {
-    font-style: italic;
+
+    // notes [ title ]
+    .title {
+        text-decoration: underline;
+        padding-bottom: 4%;
+        text-decoration: underline;
+    }
+    // notes [ text ]
+    .text {
+        font-style: italic;
+    }
 }
 
+// helper text
 .helper {
     position: absolute;
     right: 4%;
@@ -348,5 +330,55 @@ form .btn i {
     text-transform: capitalize;
     letter-spacing: 0.12rem;
 
-    // border: 2px solid red;
+}
+
+// editing properties
+#editing {
+    
+    // dev
+    background: rgb(91, 92, 92);
+}
+
+
+@media (min-width: 760px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        height: 100vh;
+        width: 100%;
+    }
+    .page {
+        width: 100%;
+        max-width: 1920px;
+        max-height: 1080px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    header,
+    main,
+    footer {
+        width: 100%;
+        max-width: 760px;
+
+        
+    }
+    header,
+    footer {
+        border: 2px solid var(--dark-text);
+    }
+
+    form {
+        flex-direction: column;
+
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    
 }

@@ -80,12 +80,15 @@ validateForm = () => {
         console.log('validate : delete note');
 
         return
+    }
+    if (title.value === '' && text.value != '') {
+
+        // init [ createNotes ] function
+        createNotes();
 
     }
     // validate number of notes appended to list element
     if (notes.length >= 0 && notes.length < 1) {
-
-        list.removeChild(helper);
 
         // init [ createNotes ] function
         createNotes();
@@ -204,8 +207,8 @@ editNotes = () => {
 
     });
 
-    // validate current value of title
-    if (title.value === '' || title.value === null) {
+    // validate current value of title & text
+    if (title.value === '' || title.value === null && text.value === '' || text.value === null) {
         
         // init [ deleteNote ] function
         deleteNote();
@@ -215,18 +218,6 @@ editNotes = () => {
 
         return
     }
-    // validate current value of text
-    if (text.value === '' || title.value === null) {
-        
-        // init [ deleteNote ] function
-        deleteNote();
-
-        // test
-        console.log('assign input value as edit text');
-
-        return
-    }
-    
     // test data values
     console.log('FUNCTION EDIT NOTES : title value = ' + title);
             
@@ -237,9 +228,7 @@ editNotes = () => {
     // click event [ edit ] button
     edit.addEventListener('click', (e)=> {
 
-        if (title.value != '' && text.value === '') {
-
-            list.removeChild(helper);
+        if (title.value != '' && text.value === '' || title.value != '' && text.value != '') {
 
             // select only the [ editing ] title & text values
             let title = document.querySelector('#title');
@@ -250,13 +239,16 @@ editNotes = () => {
             console.log('FUNCTION EDIT NOTES : edit text = ' + text.value);
 
             console.log('TITLE no empty && TEXT empty');
+
+            return
         }
+
+        // remove helper element
+        list.removeChild(helper);
 
         // prevent form submit
         e.preventDefault();
-
-
-
+        
         // test
         console.log('FUNCTION EDIT : edit button event');
 
@@ -272,26 +264,23 @@ deleteNote = () => {
     // set form display to none
     form.style.display = 'none';
 
-    notes.forEach(element => {
-        element.addEventListener('click', ()=> {
-            console.log('FUNCTION : DELETE NOTE');
-        })
-    });
-
+    // validate length of notes on load
     if (notes.length === 0) {
 
         // set a helper element on load
-        
         helper.id = 'helper';
         helper.className = 'helper';
         helper.innerText = 'looks a little empty here... ' + ' Click the plus to get started';
+
+        // append helper element
         list.appendChild(helper);
     }
     else {
+        // remove helper element
         list.removeChild(helper);
     }
     // test
-    console.log('function : delete note');
+    console.log('FUNCTION : DELETE NOTE');
 }
 
 // function [ defaultProperties ]
