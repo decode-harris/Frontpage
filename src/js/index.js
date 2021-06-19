@@ -79,9 +79,13 @@ validateForm = () => {
         // test
         console.log('validate : delete note');
 
+        return
+
     }
     // validate number of notes appended to list element
     if (notes.length >= 0 && notes.length < 1) {
+
+        list.removeChild(helper);
 
         // init [ createNotes ] function
         createNotes();
@@ -94,6 +98,8 @@ validateForm = () => {
 
         // test
         console.log('FUNCTION VALIDATE FORM : notes length validation');
+
+        return
     }
     else {
 
@@ -103,13 +109,12 @@ validateForm = () => {
 
     // test PROCESS
     console.log('function : validate');
+
+    
 }
 
 // function [ createNotes ]
 createNotes = () => {
-
-    // remove the [ helper ] element on note creation
-    // helper.style.display = 'none';
 
     // select title & text input values
     let title = document.querySelector('#title');
@@ -153,8 +158,10 @@ createNotes = () => {
         console.log('validate : form elements removed');
 
     }
+    // validate title & text values
     if (title.value != '' && text.value === '') {
 
+        // remove helper from view
         list.removeChild(helper);
 
     }
@@ -265,6 +272,12 @@ editNotes = () => {
 deleteNote = () => {
     // set form display to none
     form.style.display = 'none';
+
+    notes.forEach(element => {
+        element.addEventListener('click', ()=> {
+            console.log('FUNCTION : DELETE NOTE');
+        })
+    });
 
     if (notes.length === 0) {
 
