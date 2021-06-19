@@ -110,7 +110,6 @@ validateForm = () => {
     // test PROCESS
     console.log('function : validate');
 
-    
 }
 
 // function [ createNotes ]
